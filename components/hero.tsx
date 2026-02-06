@@ -55,8 +55,8 @@ export default function Hero() {
             </div>
 
             {/* Footer Branding Text */}
-            <div className="absolute bottom-8 left-0 w-full px-6 md:px-12 flex flex-col md:flex-row items-center justify-between text-[10px] md:text-xs font-medium tracking-widest text-zinc-400 uppercase gap-4 md:gap-0">
-                <div className="text-center md:text-left">
+            <div className="absolute bottom-8 left-0 w-full px-6 md:px-12 flex  md:flex-row items-center justify-between text-[10px] md:text-xs font-medium tracking-widest text-zinc-400 uppercase gap-4 md:gap-0">
+                <div className="text-center md:text-left hidden lg:block">
                     READY TO FIND YOUR NEXT IDEAL<br />TEMPLATE
                 </div>
                 <div className="text-center">
