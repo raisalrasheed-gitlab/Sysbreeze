@@ -27,15 +27,15 @@ export default function Header() {
     return (
         <header
             className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled
-                ? "py-4 bg-black backdrop-blur-md shadow-sm border-b border-zinc-800"
-                : "py-4 bg-black"
+                ? "py-4 bg-white backdrop-blur-md shadow-sm border-b border-gray-50"
+                : "py-4 bg-white"
                 }`}
         >
             <div className="container mx-auto px-6 flex items-center justify-between">
                 {/* Logo */}
                 <Link href="/" className="text-2xl font-bold tracking-tighter text-white">
-                    <div className="relative w-40 h-16">
-                        <Image src="/logo_black.jpeg" alt="" fill />
+                    <div className="relative w-40 text-black">
+                        Sysbrease
                     </div>
                 </Link>
 
@@ -45,15 +45,15 @@ export default function Header() {
                         <Link
                             key={link.name}
                             href={link.href}
-                            className="text-sm font-medium text-zinc-400 hover:text-white transition-colors relative group"
+                            className="text-sm font-semibold text-zinc-600 hover:text-black transition-colors relative group"
                         >
                             {link.name}
-                            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full" />
+                            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full" />
                         </Link>
                     ))}
                     <Link
                         href="#contact"
-                        className="px-5 py-2.5 bg-white text-black text-sm font-semibold rounded-full hover:bg-zinc-200 transition-all transform hover:scale-105 active:scale-95 shadow-md"
+                        className="px-5 py-2.5 bg-black text-white text-sm font-bold rounded-full hover:bg-zinc-800 transition-all transform hover:scale-105 active:scale-95 shadow-lg"
                     >
                         Get Started
                     </Link>
@@ -61,7 +61,7 @@ export default function Header() {
 
                 {/* Mobile Menu Button */}
                 <button
-                    className="md:hidden text-white focus:outline-none"
+                    className="md:hidden text-black focus:outline-none"
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 >
                     <svg
@@ -97,14 +97,14 @@ export default function Header() {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-black border-b border-zinc-800 overflow-hidden"
+                        className="md:hidden bg-white border-b border-zinc-100 overflow-hidden"
                     >
                         <div className="flex flex-col space-y-4 px-6 py-8">
                             {navLinks.map((link) => (
                                 <Link
                                     key={link.name}
                                     href={link.href}
-                                    className="text-lg font-medium text-zinc-400 hover:text-white"
+                                    className="text-lg font-bold text-zinc-600 hover:text-black"
                                     onClick={() => setMobileMenuOpen(false)}
                                 >
                                     {link.name}
@@ -112,7 +112,7 @@ export default function Header() {
                             ))}
                             <Link
                                 href="#contact"
-                                className="w-full py-4 bg-white text-black text-center font-semibold rounded-xl"
+                                className="w-full py-4 bg-black text-white text-center font-bold rounded-xl"
                                 onClick={() => setMobileMenuOpen(false)}
                             >
                                 Get Started
