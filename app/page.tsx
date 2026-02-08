@@ -11,8 +11,8 @@ export default function Home() {
       <Hero />
       <AboutUs />
       <ServicesSection />
-      {/* <TrainingSection />
-      <WhySysbreeze /> */}
+      <TrainingSection />
+      {/* <WhySysbreeze /> */}
 
 
 

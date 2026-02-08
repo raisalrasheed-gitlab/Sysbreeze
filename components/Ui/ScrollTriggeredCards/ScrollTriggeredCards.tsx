@@ -6,6 +6,8 @@ import { useRef } from 'react';
 interface Service {
     icon: string;
     title: string;
+    subtitle?: string;
+    description?: string;
     bgColor: string;
 }
 
@@ -30,29 +32,29 @@ function CardSection({ i, service }: { i: number, service: Service }) {
         offset: ["start start", "end start"]
     });
 
-    // As this section scrolls out, the card scales down and dims slightly
+    // Dynamic transformations based on scroll
     const scale = useTransform(scrollYProgress, [0, 1], [1, 0.9]);
     const opacity = useTransform(scrollYProgress, [0, 0.8, 1], [1, 1, 0.5]);
+    const rotate = useTransform(scrollYProgress, [0, 0.5, 1], [-6, 0, 6]);
 
     return (
         <div
             ref={containerRef}
-            className="h-[70vh] w-full relative mb-12"
+            className="h-[70vh] w-full relative mb-8"
             style={{ zIndex: i }}
         >
-            <div className="sticky top-0 h-screen w-full flex items-center justify-center pt-[10vh]">
+            <div className="sticky top-0 h-screen w-full flex items-center justify-center">
                 <motion.div
-                    style={{ scale, opacity }}
+                    style={{ scale, opacity, rotate }}
                     initial="offscreen"
                     whileInView="onscreen"
                     viewport={{ once: false, amount: 0.2 }}
-                    className="w-full max-w-[450px] aspect-[1/1.1] flex justify-center items-center relative"
+                    className="w-full max-w-[450px] aspect-[1/1.2] flex justify-center items-center relative"
                 >
                     {/* Splash Background - Rotated -10deg via parent onscreen animation */}
                     <div
-                        className="absolute inset-0 z-0"
+                        className="absolute inset-0 z-0 bg-white   rounded-[60px]"
                         style={{
-                            background: service.bgColor,
                             clipPath: `path("M 0 303.5 C 0 292.454 8.995 285.101 20 283.5 L 460 219.5 C 470.085 218.033 480 228.454 480 239.5 L 500 430 C 500 441.046 491.046 450 480 450 L 20 450 C 8.954 450 0 441.046 0 430 Z")`,
                         }}
                     />
@@ -60,14 +62,24 @@ function CardSection({ i, service }: { i: number, service: Service }) {
                     {/* White Card Content */}
                     <motion.div
                         variants={cardVariants}
-                        className="w-[310px] h-[440px] rounded-[30px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.3)] relative z-10 origin-center bg-[#f5f5f5] flex flex-col items-center justify-center p-8 text-black"
+                        className="w-[310px] h-[440px] rounded-[30px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.3)] relative z-10 origin-center bg-gradient-to-br from-[#D81B8C] via-[#612D91] to-[#21094E] flex flex-col items-center justify-center p-8 text-white"
                     >
-                        <div className="mb-8 flex items-center justify-center">
-                            <i className={`fa-solid ${service.icon} text-8xl`} style={{ color: service.bgColor }}></i>
+                        <div className="mb-6 flex items-center justify-center">
+                            <i className={`fa-solid ${service.icon} text-7xl text-white`}></i>
                         </div>
-                        <h3 className="text-3xl font-black text-center uppercase tracking-tighter leading-none">
+                        <h3 className="text-3xl font-black text-center uppercase tracking-tighter leading-none mb-3">
                             {service.title}
                         </h3>
+                        {service.subtitle && (
+                            <p className="text-sm font-bold text-white/90 text-center uppercase tracking-wider mb-2 leading-tight">
+                                {service.subtitle}
+                            </p>
+                        )}
+                        {service.description && (
+                            <p className="text-[11px] text-white/70 text-center leading-relaxed line-clamp-5">
+                                {service.description} <span className="text-white font-bold italic">more..</span>
+                            </p>
+                        )}
                     </motion.div>
                 </motion.div>
             </div>
@@ -84,7 +96,6 @@ const cardVariants: Variants = {
     },
     onscreen: {
         y: 0,
-        rotate: -10,
         opacity: 1,
         transition: {
             type: "spring",

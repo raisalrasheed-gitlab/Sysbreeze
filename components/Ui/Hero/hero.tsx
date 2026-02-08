@@ -121,18 +121,18 @@ export default function Hero() {
             </div>
 
             {/* Dynamic Scrolling Sections */}
-            <div className="relative z-10 w-full mt-16 md:mt-24 space-y-2 md:space-y-4 opacity-70 grayscale grayscale-0 transition-all duration-700">
+            <div className="relative z-10 w-full mt-16 md:mt-24 space-y-2 md:space-y-4 opacity-90 grayscale grayscale-0 transition-all duration-700">
                 <ScrollVelocity
                     texts={["BRANDING | DIGITAL MARKETING | HR MANAGEMENT | WEBSITE DESIGN | ECOMMERCE DEVELOP | MOBILE APPLICATION"]}
                     velocity={30}
                     className="scroller-text text-white"
-                    parallaxStyle={{ backgroundColor: '#c7268f', padding: '15px 0' }}
+                    parallaxStyle={{ backgroundColor: 'black', padding: '15px 0' }}
                 />
                 <ScrollVelocity
                     texts={["HR | DIGITAL MARKETING | PYTHON FULLSTACK | MERN STACK | DATA SCIENCE | MACHINE LEARNING | MOBILE APPLICATION"]}
                     velocity={-30}
                     className="scroller-text text-white"
-                    parallaxStyle={{ backgroundColor: '#3c1a6b', padding: '15px 0' }}
+                    parallaxStyle={{ backgroundColor: 'black', padding: '15px 0' }}
                 />
             </div>
 
