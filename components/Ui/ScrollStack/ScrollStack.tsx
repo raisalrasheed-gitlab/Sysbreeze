@@ -28,7 +28,8 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
             // Determine offset based on screen width
             const isMobile = window.innerWidth < 768;
             const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024;
-            const cardOffset = isMobile ? 15 : (isTablet ? 32 : 54);
+            const cardOffset = isMobile ? 25 : (isTablet ? 32 : 54);
+            const topMargin = isMobile ? 100 : 0; // Top margin for mobile pinning
 
             cards.forEach((card, index) => {
                 // Set z-index so that newer cards stack on top
@@ -36,9 +37,13 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
 
                 ScrollTrigger.create({
                     trigger: card,
-                    start: `center center+=${index * cardOffset}`,
+                    start: isMobile
+                        ? `top ${topMargin + (index * cardOffset)}px`
+                        : `center center+=${index * cardOffset}`,
                     endTrigger: containerRef.current,
-                    end: `bottom center+=${(cards.length) * cardOffset}`,
+                    end: isMobile
+                        ? `bottom ${topMargin + (cards.length * cardOffset)}px`
+                        : `bottom center+=${(cards.length) * cardOffset}`,
                     pin: true,
                     pinSpacing: false,
                     scrub: true,

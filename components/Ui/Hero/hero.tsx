@@ -8,7 +8,7 @@ export default function Hero() {
     return (
         <section className="relative h-full w-full bg-white overflow-hidden flex flex-col items-center justify-center pt-20">
             {/* Background Liquid Effect */}
-            <div className="absolute inset-0 z-0">
+            {/* <div className="absolute inset-0 z-0">
                 <LiquidEther
                     colors={['#5227FF', '#FF9FFC', '#B19EEF']}
                     mouseForce={20}
@@ -26,7 +26,7 @@ export default function Hero() {
                     autoResumeDelay={3000}
                     autoRampDuration={0.6}
                 />
-            </div>
+            </div> */}
 
             {/* Slogans */}
             {/* <div className="absolute top-24 md:top-28 z-20 text-center px-4">
