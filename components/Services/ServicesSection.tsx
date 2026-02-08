@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import ScrollStack, { ScrollStackItem } from "../Ui/ScrollStack/ScrollStack";
+import Stack from "../Ui/Stack/Stack";
 
 const services = [
     {
@@ -70,15 +70,18 @@ export default function ServicesSection() {
                     </motion.h2>
                 </div>
 
-                {/* Mobile & Tablet: ScrollStack Stacking Effect */}
-                <div className="lg:hidden">
-                    <ScrollStack className="max-w-7xl mx-auto px-4">
-                        {services.map((service, index) => (
-                            <ScrollStackItem key={index}>
-                                <ServiceCardContent service={service} index={index} />
-                            </ScrollStackItem>
-                        ))}
-                    </ScrollStack>
+                {/* Mobile & Tablet: Interactive Stack Effect */}
+                <div className="lg:hidden px-4">
+                    <div className="relative h-[600px] max-w-xl mx-auto">
+                        <Stack
+                            cards={services.map((service, index) => (
+                                <ServiceCardContent key={index} service={service} index={index} />
+                            ))}
+                            randomRotation={true}
+                            sensitivity={180}
+                            sendToBackOnClick={true}
+                        />
+                    </div>
                 </div>
 
                 {/* Desktop: Grid Layout */}
