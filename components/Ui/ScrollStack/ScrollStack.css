@@ -60,19 +60,17 @@
 
     .scroll-stack-card-content {
         width: 100%;
-        /* Full width */
         height: auto;
-        min-height: 500px;
+        min-height: 400px;
         flex-direction: column;
         padding: 3rem 1.5rem;
         text-align: center;
-        border-radius: 30px;
-        /* Corner to corner */
+        border-radius: 40px;
         border-right: none;
         border-left: none;
     }
 
     .scroll-stack-card-wrapper {
-        height: 80vh;
+        height: 70vh;
     }
 }

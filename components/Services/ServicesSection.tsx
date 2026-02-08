@@ -50,9 +50,10 @@ const services = [
 
 export default function ServicesSection() {
     return (
-        <section className="py-8 md:py-16 bg-black overflow-hidden " id="services">
+        <section className="py-10 md:py-16 bg-black overflow-hidden " id="services">
             <div className="container mx-auto px-0 md:px-6">
-                <div className="text-center mb-8 md:mb-16 px-6">
+                <div className="text-center mb-8xnpm run dev
+                 md:mb-16 px-6">
                     <motion.span
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}

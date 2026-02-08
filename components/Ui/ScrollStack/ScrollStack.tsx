@@ -57,8 +57,10 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
                         filter: "brightness(0.5) blur(2px)",
                         scrollTrigger: {
                             trigger: cards[index + 1],
-                            start: "top center",
-                            end: "center center",
+                            start: isMobile ? "top bottom" : "top center",
+                            end: isMobile
+                                ? `top ${topMargin + ((index + 1) * cardOffset)}px`
+                                : "center center",
                             scrub: true,
                         }
                     });
