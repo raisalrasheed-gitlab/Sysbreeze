@@ -3,6 +3,7 @@ import ServicesSection from "@/components/Services/ServicesSection";
 import TrainingSection from "@/components/Training/TrainingSection";
 import WhySysbreeze from "@/components/WhySysbreeze/WhySysbreeze";
 import AboutUs from "@/components/Ui/AboutUs/AboutUs";
+import WorksSection from "@/components/Works/WorksSection";
 
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
       <AboutUs />
       <ServicesSection />
       <TrainingSection />
+      <WorksSection />
       {/* <WhySysbreeze /> */}
 
 
