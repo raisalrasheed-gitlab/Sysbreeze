@@ -18,8 +18,8 @@ export default function AboutUs() {
                             viewport={{ once: true }}
                             className="sticky top-32"
                         >
-                            <span className="text-pink-600 font-bold tracking-[0.3em] uppercase text-sm mb-4 block">
-                                👋 Who We Are
+                            <span className="text-pink-600 font-bold tracking-[0.3em] uppercase text-xs mb-4 inline-block px-3 py-1 bg-pink-50 rounded-full">
+                                OUR IDENTITY
                             </span>
                             <h2 className="text-5xl md:text-6xl font-black text-black tracking-tighter leading-none mb-8">
                                 ABOUT<br />SYSBREEZE
@@ -29,47 +29,14 @@ export default function AboutUs() {
                     </div>
 
                     {/* Animated Content */}
-                    <div className="lg:col-span-8 space-y-12">
+                    <div className="lg:col-span-8">
                         <ScrollReveal
-                            baseOpacity={0.1}
-                            baseRotation={2}
-                            blurStrength={8}
-                            scrollLag={1.2}
-                            textClassName="text-2xl md:!text-4xl font-bold text-zinc-900 leading-tight"
+                            textClassName="text-4xl md:text-6xl lg:text-7xl uppercase"
                         >
                             Sysbreeze is a future-focused business consulting, IT services, and training company dedicated to helping brands grow, businesses scale, and professionals build real-world skills.
                         </ScrollReveal>
 
-                        <ScrollReveal
-                            baseOpacity={0.1}
-                            baseRotation={1}
-                            blurStrength={5}
-                            scrollLag={1.5}
-                            textClassName="text-lg md:!text-4xl font-medium text-zinc-600 leading-relaxed"
-                        >
-                            We bring together strategy, technology, marketing, HR, and education under one roof — making us a true one-stop solution for businesses and learners alike. From building powerful brand identities to delivering cutting-edge digital solutions and industry-ready training, Sysbreeze is driven by results that matter.
-                        </ScrollReveal>
 
-                        <div className="pt-8 border-t border-zinc-100">
-                            <motion.h3
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                className="text-xl font-black text-black uppercase tracking-widest mb-6"
-                            >
-                                Our Mission is Simple
-                            </motion.h3>
-
-                            <ScrollReveal
-                                baseOpacity={0.05}
-                                baseRotation={0}
-                                blurStrength={10}
-                                scrollLag={2}
-                                textClassName="text-3xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 tracking-tighter"
-                            >
-                                Build strong brands. Power sustainable growth. Shape future tech leaders.
-                            </ScrollReveal>
-                        </div>
                     </div>
 
                 </div>

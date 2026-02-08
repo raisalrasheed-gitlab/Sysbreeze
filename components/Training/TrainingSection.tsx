@@ -56,7 +56,7 @@ const trainingPrograms = [
 
 export default function TrainingSection() {
     return (
-        <section className="py-24 bg-zinc-950 text-white overflow-hidden" id="training">
+        <section className="py-16 md:py-24 relative z-20 bg-zinc-950 text-white overflow-hidden" id="training">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
                     <motion.span

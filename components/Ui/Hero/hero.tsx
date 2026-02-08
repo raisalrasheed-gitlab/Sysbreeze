@@ -2,12 +2,13 @@
 
 import { motion } from "framer-motion";
 import { ScrollVelocity } from "../../ScrollVelocity/ScrollVelocity";
+import LiquidEther from "@/components/Gradient/LiquidEther";
 
 export default function Hero() {
     return (
         <section className="relative h-full w-full bg-white overflow-hidden flex flex-col items-center justify-center pt-20">
             {/* Background Liquid Effect */}
-            {/* <div className="absolute inset-0 z-0">
+            <div className="absolute inset-0 z-0">
                 <LiquidEther
                     colors={['#5227FF', '#FF9FFC', '#B19EEF']}
                     mouseForce={20}
@@ -25,7 +26,7 @@ export default function Hero() {
                     autoResumeDelay={3000}
                     autoRampDuration={0.6}
                 />
-            </div> */}
+            </div>
 
             {/* Slogans */}
             {/* <div className="absolute top-24 md:top-28 z-20 text-center px-4">
@@ -120,16 +121,18 @@ export default function Hero() {
             </div>
 
             {/* Dynamic Scrolling Sections */}
-            <div className="relative z-10 w-full mt-16 md:mt-24 space-y-2 md:space-y-4 opacity-50 grayscale hover:grayscale-0 transition-all duration-700">
+            <div className="relative z-10 w-full mt-16 md:mt-24 space-y-2 md:space-y-4 opacity-70 grayscale grayscale-0 transition-all duration-700">
                 <ScrollVelocity
                     texts={["BRANDING | DIGITAL MARKETING | HR MANAGEMENT | WEBSITE DESIGN | ECOMMERCE DEVELOP | MOBILE APPLICATION"]}
                     velocity={30}
-                    className="scroller-text"
+                    className="scroller-text text-white"
+                    parallaxStyle={{ backgroundColor: '#c7268f', padding: '15px 0' }}
                 />
                 <ScrollVelocity
                     texts={["HR | DIGITAL MARKETING | PYTHON FULLSTACK | MERN STACK | DATA SCIENCE | MACHINE LEARNING | MOBILE APPLICATION"]}
                     velocity={-30}
-                    className="scroller-text"
+                    className="scroller-text text-white"
+                    parallaxStyle={{ backgroundColor: '#3c1a6b', padding: '15px 0' }}
                 />
             </div>
 
@@ -164,12 +167,12 @@ export default function Hero() {
           .face-bottom { transform: rotateX(-90deg) translateZ(128px); }
         } 
            @media (max-width: 640px) {
-          .face-front  { transform: rotateY(  0deg) translateZ(120px); }
-          .face-back   { transform: rotateY(180deg) translateZ(120px); }
-          .face-right  { transform: rotateY( 90deg) translateZ(120px); }
-          .face-left   { transform: rotateY(-90deg) translateZ(120px); }
-          .face-top    { transform: rotateX( 90deg) translateZ(120px); }
-          .face-bottom { transform: rotateX(-90deg) translateZ(120px); }
+          .face-front  { transform: rotateY(  0deg) translateZ(112px); }
+          .face-back   { transform: rotateY(180deg) translateZ(112px); }
+          .face-right  { transform: rotateY( 90deg) translateZ(112px); }
+          .face-left   { transform: rotateY(-90deg) translateZ(112px); }
+          .face-top    { transform: rotateX( 90deg) translateZ(112px); }
+          .face-bottom { transform: rotateX(-90deg) translateZ(112px); }
         }
       `}</style>
         </section>

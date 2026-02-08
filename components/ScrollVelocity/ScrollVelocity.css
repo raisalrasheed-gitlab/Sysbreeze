@@ -15,7 +15,7 @@
     font-weight: 900;
     letter-spacing: -0.05em;
     text-transform: uppercase;
-    color: black;
+    color: inherit;
 }
 
 .scroller span {

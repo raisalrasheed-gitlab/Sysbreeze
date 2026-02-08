@@ -168,7 +168,7 @@ export const ScrollVelocity: React.FC<ScrollVelocityProps> = ({
                     parallaxClassName={parallaxClassName}
                     scrollerClassName={scrollerClassName}
                     parallaxStyle={parallaxStyle}
-                    scrollerStyle={scrollerStyle}
+
                 >
                     {text}&nbsp;
                 </VelocityText>
