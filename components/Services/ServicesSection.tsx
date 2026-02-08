@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Stack from "../Ui/Stack/Stack";
+import ScrollTriggeredCards from "../Ui/ScrollTriggeredCards/ScrollTriggeredCards";
 
 const services = [
     {
@@ -50,10 +50,9 @@ const services = [
 
 export default function ServicesSection() {
     return (
-        <section className="py-10 md:py-16 bg-black overflow-hidden " id="services">
+        <section className="py-10 md:py-16 bg-black overflow-clip no-scrollbar" id="services">
             <div className="container mx-auto px-0 md:px-6">
-                <div className="text-center mb-8xnpm run dev
-                 md:mb-16 px-6">
+                <div className="text-center mb-8 md:mb-16 px-6">
                     <motion.span
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
@@ -70,18 +69,9 @@ export default function ServicesSection() {
                     </motion.h2>
                 </div>
 
-                {/* Mobile & Tablet: Interactive Stack Effect */}
+                {/* Mobile & Tablet: Scroll Triggered List Effect */}
                 <div className="lg:hidden px-4">
-                    <div className="relative h-[600px] max-w-xl mx-auto">
-                        <Stack
-                            cards={services.map((service, index) => (
-                                <ServiceCardContent key={index} service={service} index={index} />
-                            ))}
-                            randomRotation={true}
-                            sensitivity={180}
-                            sendToBackOnClick={true}
-                        />
-                    </div>
+                    <ScrollTriggeredCards services={services} />
                 </div>
 
                 {/* Desktop: Grid Layout */}
