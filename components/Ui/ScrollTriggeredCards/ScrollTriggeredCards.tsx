@@ -17,7 +17,7 @@ interface ScrollTriggeredCardsProps {
 
 export default function ScrollTriggeredCards({ services }: ScrollTriggeredCardsProps) {
     return (
-        <div className="flex flex-col items-center w-full pt-10 pb-20 no-scrollbar">
+        <div className="flex flex-col items-center w-full pt-0 pb-20 no-scrollbar">
             {services.map((service, i) => (
                 <CardSection key={i} i={i} service={service} />
             ))}
@@ -62,7 +62,7 @@ function CardSection({ i, service }: { i: number, service: Service }) {
                     {/* White Card Content */}
                     <motion.div
                         variants={cardVariants}
-                        className="w-[310px] h-[440px] rounded-[30px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.3)] relative z-10 origin-center bg-gradient-to-br from-[#D81B8C] via-[#612D91] to-[#21094E] flex flex-col items-center justify-center p-8 text-white"
+                        className="w-[310px] h-[440px] rounded-[30px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.3)] relative z-10 origin-center bg-gradient-to-br from-[#D81B8C] via-[#612D91] to-[#21094E] flex flex-col items-center justify-center p-4 text-white"
                     >
                         <div className="mb-6 flex items-center justify-center">
                             <i className={`fa-solid ${service.icon} text-7xl text-white`}></i>

@@ -52,7 +52,7 @@ export default function ServicesSection() {
     return (
         <section className="py-10 md:py-16 bg-black overflow-clip no-scrollbar" id="services">
             <div className="container mx-auto px-0 md:px-6">
-                <div className="text-center md:mb-16 px-6">
+                <div className="text-center mb-6 px-6">
                     <motion.span
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
@@ -70,7 +70,7 @@ export default function ServicesSection() {
                 </div>
 
                 {/* Mobile & Tablet: Scroll Triggered List Effect */}
-                <div className="lg:hidden px-4">
+                <div className="lg:hidden px-4 relative -top-20">
                     <ScrollTriggeredCards services={services} />
                 </div>
 
@@ -98,22 +98,18 @@ function ServiceCardContent({ service, index = 0, isGrid = false }: { service: t
 
     return (
         <>
-            <div
-                className="absolute inset-0 z-0 bg-white"
-            />
+            {/* Aesthetic Background Elements - Keeping it premium with subtle light blurs */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl" />
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-2xl" />
 
-            {/* Aesthetic Background Elements */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-white rounded-full -translate-y-1/2 translate-x-1/2 " />
-            <div className="absolute bottom-0 left-0 w-48 h-48 bg-white rounded-full translate-y-1/2 -translate-x-1/2 " />
-
-            <div className={`relative z-10 flex flex-col items-center text-center p-8 md:p-12 text-white h-full ${!isGrid ? 'md:flex-row md:text-left' : ''}`}>
-                {/* Number Indicator - More visible on mobile */}
-                <div className={`absolute top-0 left-0 md:top-12 md:left-12 opacity-20 font-black text-6xl md:text-8xl tracking-tighter ${isGrid ? 'hidden' : 'block'}`}>
+            <div className={`relative z-10 flex flex-col items-center text-center pt-10 text-white h-full ${!isGrid ? 'md:flex-row md:text-left' : ''}`}>
+                {/* Number Indicator - Subtle white highlight */}
+                <div className={`absolute top-0 left-0 md:top-12 md:left-12 opacity-10 font-black text-6xl md:text-8xl tracking-tighter text-white ${isGrid ? 'hidden' : 'block'}`}>
                     {displayIndex}
                 </div>
 
                 <div className={`flex-1 ${!isGrid ? 'md:pr-12' : 'mb-8'}`}>
-                    <h3 className={`${isGrid ? 'text-3xl lg:text-4xl px-4' : 'text-4xl md:text-5xl lg:text-7xl'} font-black mb-4 leading-none tracking-tighter uppercase`}>
+                    <h3 className={`${isGrid ? 'text-3xl lg:text-4xl px-4' : 'text-4xl md:text-5xl lg:text-7xl'} font-black mb-4 leading-none tracking-tighter uppercase text-white`}>
                         {service.title}
                     </h3>
                     <p className={`text-white/90 ${isGrid ? 'text-base px-6' : 'text-xl md:text-2xl'} font-medium max-w-xl mb-6 leading-tight`}>
@@ -122,13 +118,6 @@ function ServiceCardContent({ service, index = 0, isGrid = false }: { service: t
                     <p className={`text-white/70 ${isGrid ? 'text-sm px-8 line-clamp-5' : 'text-sm md:text-lg'} max-w-md ${isGrid ? 'block' : 'hidden md:block'}`}>
                         {service.description}{isGrid && <span className="text-white font-bold ml-1 italic">more..</span>}
                     </p>
-                </div>
-
-                <div className={`relative z-10 flex items-center justify-center bg-white/20 backdrop-blur-xl rounded-[40px] border-[1px] border-white/30 shadow-2xl overflow-hidden shrink-0
-                    ${isGrid ? 'w-32 h-32 md:w-36 md:h-36' : 'w-48 h-48 md:w-72 md:h-72'} self-center`}>
-                    {/* Subtle Internal Gradient for Icon Container */}
-                    <div className="absolute inset-0 bg-white/10 pointer-events-none" />
-                    <i className={`fa-solid ${service.icon} ${isGrid ? 'text-4xl md:text-5xl' : 'text-3xl md:text-8xl'} text-white drop-shadow-lg`}></i>
                 </div>
             </div>
         </>
