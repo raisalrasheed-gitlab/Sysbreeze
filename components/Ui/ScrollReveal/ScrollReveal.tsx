@@ -21,7 +21,7 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
     textClassName = '',
 }) => {
     const containerRef = useRef<HTMLDivElement>(null);
-    const [lines, setLines] = useState<HTMLElement[][]>([]);
+    const [resizeKey, setResizeKey] = useState(0);
 
     const splitText = useMemo(() => {
         return children.split(/(\s+)/).map((word, index) => {
@@ -38,6 +38,7 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
         const el = containerRef.current;
         if (!el) return;
 
+        // Force a layout calculation by waiting a tiny bit for the browser to settle
         const words = Array.from(el.querySelectorAll('.reveal-word')) as HTMLElement[];
 
         const groupLines = () => {
@@ -46,8 +47,9 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
             let currentTop = -1;
 
             words.forEach((word) => {
+                // reset color to measure properly if needed, though offsetTop is usually stable
                 const top = word.offsetTop;
-                if (top !== currentTop) {
+                if (Math.abs(top - currentTop) > 5) { // Threshold for line detection
                     if (currentLine.length > 0) grouped.push(currentLine);
                     currentLine = [word];
                     currentTop = top;
@@ -68,12 +70,13 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
                     start: 'top 85%',
                     end: 'bottom 40%',
                     scrub: 1,
+                    onRefresh: () => {
+                        // Re-trigger color states if needed on mobile orientation change
+                    }
                 }
             });
 
             calculatedLines.forEach((line, index) => {
-                // To achieve "start when previous is 25% through":
-                // If each line takes 1 unit of time, we start the next at index * 0.75
                 tl.fromTo(
                     line,
                     { color: 'rgba(0, 0, 0, 0.1)' },
@@ -82,24 +85,26 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
                         ease: 'none',
                         duration: 1
                     },
-                    index * 0.75 // Overlap logic: starts at 0, 0.75, 1.5, etc.
+                    index * 0.75
                 );
             });
         });
 
         // Re-calculate on resize
         const handleResize = () => {
-            ctx.revert();
-            // Trigger re-run of this effect or similar logic
-            // Simplified here for brevity, GSAP context handles most cleanups
+            setResizeKey(prev => prev + 1);
         };
+
         window.addEventListener('resize', handleResize);
+
+        // Refresh ScrollTrigger to ensure correct positions
+        ScrollTrigger.refresh();
 
         return () => {
             ctx.revert();
             window.removeEventListener('resize', handleResize);
         };
-    }, [children]);
+    }, [children, resizeKey]);
 
     return (
         <div ref={containerRef} className={`scroll-reveal-container ${containerClassName}`}>
