@@ -41,7 +41,7 @@ export default function Hero() {
             </div> */}
 
             {/* 3D Cube Container */}
-            <div className="relative z-10 w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 perspective-1000 mt-20 md:mt-20 ">
+            <div className="relative z-10 w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 perspective-1000 mt-28 md:mt-20 ">
                 <motion.div
                     className="w-full h-full relative preserve-3d"
                     animate={{

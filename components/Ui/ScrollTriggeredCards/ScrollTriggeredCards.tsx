@@ -76,10 +76,18 @@ function CardSection({ i, service }: { i: number, service: Service }) {
                             </p>
                         )}
                         {service.description && (
-                            <p className="text-[11px] text-white/70 text-center leading-relaxed line-clamp-5">
+                            <p className="text-[11px] text-white/70 text-center leading-relaxed line-clamp-5 mb-4">
                                 {service.description} <span className="text-white font-bold italic">more..</span>
                             </p>
                         )}
+                        <motion.button
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="px-6 py-2 bg-white/10 hover:bg-white/20 border border-white/20 rounded-full text-white font-bold text-[10px] tracking-widest uppercase transition-colors backdrop-blur-sm flex items-center gap-2 mt-2"
+                        >
+                            Explore More
+                            <i className="fa-solid fa-arrow-right-long text-[10px]"></i>
+                        </motion.button>
                     </motion.div>
                 </motion.div>
             </div>

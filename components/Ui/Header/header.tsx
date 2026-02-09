@@ -27,16 +27,19 @@ export default function Header() {
     return (
         <header
             className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled
-                ? "py-4 bg-white backdrop-blur-md shadow-sm border-b border-gray-50"
-                : "py-4 bg-white"
+                ? "py-3 bg-white backdrop-blur-md shadow-sm border-b border-gray-50"
+                : "py-3 bg-white"
                 }`}
         >
             <div className="container mx-auto px-6 flex items-center justify-between">
-                {/* Logo */}
-                <Link href="/" className="text-2xl font-bold tracking-tighter text-white">
-                    <div className="relative w-40 text-black">
-                        Sysbrease
-                    </div>
+                <Link href="/" className="relative flex items-center">
+                    <Image
+                        src="/Gemini_Generated_Image_2w2muj2w2muj2w2m.png"
+                        alt="Sysbreeze Logo"
+                        width={180}
+                        height={60}
+                        className="object-contain"
+                    />
                 </Link>
 
                 {/* Desktop Navigation */}

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import TrainingCarousel from "./TrainingCarousel";
 
 const trainingPrograms = [
     {
@@ -56,9 +57,9 @@ const trainingPrograms = [
 
 export default function TrainingSection() {
     return (
-        <section className="py-16 md:py-24 relative z-20 bg-zinc-950 text-white overflow-hidden" id="training">
+        <section className="py-8 md:py-16 relative z-20 bg-zinc-950 text-white overflow-hidden" id="training">
             <div className="container mx-auto px-6">
-                <div className="text-center mb-16">
+                <div className="text-center mb-4">
                     <motion.span
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
@@ -75,28 +76,8 @@ export default function TrainingSection() {
                     </motion.h2>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                    {trainingPrograms.map((program, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: index * 0.05 }}
-                            whileHover={{ scale: 1.02 }}
-                            className="relative group p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500"
-                        >
-                            <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${program.color} flex items-center justify-center mb-6 text-xl group-hover:rotate-12 transition-transform duration-300`}>
-                                <i className={`fa-solid ${program.icon}`}></i>
-                            </div>
-                            <h3 className="text-lg font-black mb-2 tracking-tight">{program.title}</h3>
-                            <h4 className="text-[10px] font-bold text-cyan-400 mb-4 tracking-widest uppercase italic">
-                                {program.subtitle}
-                            </h4>
-                            <p className="text-zinc-400 text-xs leading-relaxed">
-                                {program.description}
-                            </p>
-                        </motion.div>
-                    ))}
+                <div className="mb-20">
+                    <TrainingCarousel programs={trainingPrograms} />
                 </div>
 
                 <div className="mt-20 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">

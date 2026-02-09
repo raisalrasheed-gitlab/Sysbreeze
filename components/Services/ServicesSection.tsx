@@ -115,9 +115,17 @@ function ServiceCardContent({ service, index = 0, isGrid = false }: { service: t
                     <p className={`text-white/90 ${isGrid ? 'text-base px-6' : 'text-xl md:text-2xl'} font-medium max-w-xl mb-6 leading-tight`}>
                         {service.subtitle}
                     </p>
-                    <p className={`text-white/70 ${isGrid ? 'text-sm px-8 line-clamp-5' : 'text-sm md:text-lg'} max-w-md ${isGrid ? 'block' : 'hidden md:block'}`}>
+                    <p className={`text-white/70 ${isGrid ? 'text-sm px-8 line-clamp-5' : 'text-sm md:text-lg'} max-w-md ${isGrid ? 'block' : 'hidden md:block'} mb-8`}>
                         {service.description}{isGrid && <span className="text-white font-bold ml-1 italic">more..</span>}
                     </p>
+                    <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="px-8 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-full text-white font-bold text-sm tracking-widest uppercase transition-colors backdrop-blur-sm group/btn flex items-center gap-2 mx-auto md:mx-0"
+                    >
+                        Explore More
+                        <i className="fa-solid fa-arrow-right-long transition-transform group-hover/btn:translate-x-1"></i>
+                    </motion.button>
                 </div>
             </div>
         </>

@@ -8,7 +8,7 @@ export default function AboutUs() {
     return (
         <section className="py-8 md:py-16 bg-white overflow-hidden" id="about">
             <div className="container mx-auto px-6">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
 
                     {/* Label / Title */}
                     <div className="lg:col-span-4">
@@ -21,10 +21,10 @@ export default function AboutUs() {
                             <span className="text-pink-600 font-bold tracking-[0.3em] uppercase text-xs mb-4 inline-block px-3 py-1 bg-pink-50 rounded-full">
                                 OUR IDENTITY
                             </span>
-                            <h2 className="text-5xl md:text-6xl font-black text-black tracking-tighter leading-none mb-8">
+                            <h2 className="text-4xl md:text-5xl font-black text-black  leading-none mb-8">
                                 ABOUT<br />SYSBREEZE
                             </h2>
-                            <div className="w-20 h-2 bg-black rounded-full mb-8"></div>
+                            <div className="w-20 h-2 bg-black rounded-full "></div>
                         </motion.div>
                     </div>
 
