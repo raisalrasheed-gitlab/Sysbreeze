@@ -31,7 +31,7 @@ export default function AboutUs() {
                     {/* Animated Content */}
                     <div className="lg:col-span-8">
                         <ScrollReveal
-                            textClassName="text-2xl md:text-5xl lg:text-6xl uppercase"
+                            textClassName="text-2xl md:text-5xl lg:text-6xl "
                         >
                             Sysbreeze is a future-focused business consulting, IT services, and training company dedicated to helping brands grow, businesses scale, and professionals build real-world skills.
                         </ScrollReveal>
