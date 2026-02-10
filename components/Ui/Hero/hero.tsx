@@ -121,20 +121,7 @@ export default function Hero() {
             </div>
 
             {/* Dynamic Scrolling Sections */}
-            <div className="relative z-10 w-full mt-16 md:mt-24 space-y-2 md:space-y-4 opacity-90 grayscale grayscale-0 transition-all duration-700">
-                <ScrollVelocity
-                    texts={["BRANDING | DIGITAL MARKETING | HR MANAGEMENT | WEBSITE DESIGN | ECOMMERCE DEVELOP | MOBILE APPLICATION"]}
-                    velocity={30}
-                    className="scroller-text text-white"
-                    parallaxStyle={{ backgroundColor: 'black', padding: '15px 0' }}
-                />
-                <ScrollVelocity
-                    texts={["HR | DIGITAL MARKETING | PYTHON FULLSTACK | MERN STACK | DATA SCIENCE | MACHINE LEARNING | MOBILE APPLICATION"]}
-                    velocity={-30}
-                    className="scroller-text text-white"
-                    parallaxStyle={{ backgroundColor: 'black', padding: '15px 0' }}
-                />
-            </div>
+
 
             {/* Footer Branding Text */}
             <div className="absolute bottom-8   w-full px-6 md:px-12 flex  md:flex-row items-center justify-center text-[10px] md:text-xs font-medium tracking-widest text-zinc-400 uppercase gap-4 md:gap-0">

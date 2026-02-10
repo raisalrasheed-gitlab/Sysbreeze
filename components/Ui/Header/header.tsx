@@ -36,7 +36,7 @@ export default function Header() {
                     <Image
                         src="/Gemini_Generated_Image_2w2muj2w2muj2w2m.png"
                         alt="Sysbreeze Logo"
-                        width={180}
+                        width={100}
                         height={60}
                         className="object-contain"
                     />
@@ -63,34 +63,27 @@ export default function Header() {
                 </nav>
 
                 {/* Mobile Menu Button */}
-                <button
-                    className="md:hidden text-black focus:outline-none"
+                <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="md:hidden w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-700 via-purple-800 to-zinc-950 flex flex-col items-center justify-center gap-1.5 shadow-lg border border-white/10 group overflow-hidden"
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 >
-                    <svg
-                        className="w-6 h-6"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        {mobileMenuOpen ? (
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M6 18L18 6M6 6l12 12"
-                            />
-                        ) : (
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M4 6h16M4 12h16M4 18h16"
-                            />
-                        )}
-                    </svg>
-                </button>
+                    <motion.span
+                        animate={mobileMenuOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
+                        className="w-6 h-0.5 bg-white/80 rounded-full transition-colors group-hover:bg-white"
+                    />
+                    <motion.span
+                        animate={mobileMenuOpen ? { opacity: 0, x: -20 } : { opacity: 1, x: 0 }}
+                        className="w-4 h-0.5 bg-white/80 rounded-full transition-colors group-hover:bg-white"
+                        style={{ alignSelf: 'center' }}
+                    />
+                    <motion.span
+                        animate={mobileMenuOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
+                        className="w-5 h-0.5 bg-white/80 rounded-full transition-colors group-hover:bg-white"
+                        style={{ alignSelf: 'flex-start', marginLeft: '12px' }}
+                    />
+                </motion.button>
             </div>
 
             {/* Mobile Navigation */}

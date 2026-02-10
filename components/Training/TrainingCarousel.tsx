@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface TrainingProgram {
@@ -17,12 +17,33 @@ interface TrainingCarouselProps {
 
 export default function TrainingCarousel({ programs }: TrainingCarouselProps) {
     const [index, setIndex] = useState(0);
+    const [isPaused, setIsPaused] = useState(false);
 
-    const handleNext = () => setIndex((prev) => (prev + 1) % programs.length);
-    const handlePrev = () => setIndex((prev) => (prev - 1 + programs.length) % programs.length);
+    const handleNext = useCallback(() => {
+        setIndex((prev) => (prev + 1) % programs.length);
+    }, [programs.length]);
+
+    const handlePrev = useCallback(() => {
+        setIndex((prev) => (prev - 1 + programs.length) % programs.length);
+    }, [programs.length]);
+
+    // Auto-play logic
+    useEffect(() => {
+        if (isPaused) return;
+
+        const timer = setInterval(() => {
+            handleNext();
+        }, 5000); // Change every 5 seconds
+
+        return () => clearInterval(timer);
+    }, [handleNext, isPaused]);
 
     return (
-        <div className="relative h-[450px] sm:h-[600px] w-full flex items-center justify-center perspective-1000">
+        <div
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+            className="relative h-[450px] sm:h-[600px] w-full flex items-center justify-center perspective-1000"
+        >
             <div className="relative w-full max-w-5xl h-full flex items-center justify-center">
                 <AnimatePresence initial={false}>
                     {programs.map((program, i) => {
@@ -39,14 +60,14 @@ export default function TrainingCarousel({ programs }: TrainingCarouselProps) {
                                 key={i}
                                 initial={false}
                                 animate={{
-                                    x: normalizedDistance * 300, // Horizontal offset
-                                    scale: isActive ? 1 : 0.8,
-                                    rotateY: normalizedDistance * -35, // 3D Rotation
+                                    x: normalizedDistance * 120, // More compact horizontal offset
+                                    scale: isActive ? 1 : 0.85, // Slightly larger inactive cards
+                                    rotateY: normalizedDistance * -45, // Sharper 3D Rotation
                                     zIndex: 10 - Math.abs(normalizedDistance),
-                                    opacity: Math.abs(normalizedDistance) > 1 ? 0.3 : 1,
-                                    filter: isActive ? "blur(0px)" : "blur(2px)",
+                                    opacity: Math.abs(normalizedDistance) > 1 ? 0.2 : 1,
+                                    filter: isActive ? "blur(0px)" : "blur(4px)",
                                 }}
-                                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                                transition={{ type: "spring", stiffness: 260, damping: 20 }}
                                 className={`absolute w-[300px] md:w-[400px] aspect-[4/5] rounded-[40px] overflow-hidden shadow-2xl cursor-pointer bg-neutral-900 border border-white/10 flex flex-col`}
                                 onClick={() => setIndex(i)}
                             >

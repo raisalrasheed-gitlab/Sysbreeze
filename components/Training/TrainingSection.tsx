@@ -1,55 +1,55 @@
 "use client";
 
 import { motion } from "framer-motion";
-import TrainingCarousel from "./TrainingCarousel";
+import TrainingStack from "./TrainingStack";
 
 const trainingPrograms = [
     {
         icon: "fa-user-tie",
         title: "HR TRAINING",
-        subtitle: "Become a Job-Ready HR Professional",
+        subtitle: "Online and offline training sessions available",
         description: "Recruitment, payroll, compliance & HR operations with practical exposure.",
         color: "from-blue-600 to-indigo-600"
     },
     {
         icon: "fa-hashtag",
         title: "DIGITAL MARKETING",
-        subtitle: "Master Online Marketing from Basics to Advanced",
+        subtitle: "Online and offline training sessions available",
         description: "SEO, Ads, Social Media, Analytics & Live Campaign Training.",
         color: "from-orange-500 to-red-500"
     },
     {
         icon: "fa-code",
         title: "PYTHON FULLSTACK",
-        subtitle: "Build Complete Web Applications from Scratch",
+        subtitle: "Online and offline training sessions available",
         description: "Python, Django, APIs, frontend & real-world projects.",
         color: "from-yellow-500 to-green-500"
     },
     {
         icon: "fa-robot",
         title: "AI & ROBOTICS",
-        subtitle: "Learn the Future of Technology Today",
+        subtitle: "Online and offline training sessions available",
         description: "Hands-on training in AI concepts, robotics & automation.",
         color: "from-cyan-500 to-blue-500"
     },
     {
         icon: "fa-layer-group",
         title: "MERN STACK",
-        subtitle: "Become a Modern Fullstack Developer",
+        subtitle: "Online and offline training sessions available",
         description: "MongoDB, Express, React & Node with real-time applications.",
         color: "from-green-600 to-teal-600"
     },
     {
         icon: "fa-chart-line",
         title: "DATA SCIENCE",
-        subtitle: "Turn Data into Powerful Business Insights",
+        subtitle: "Online and offline training sessions available",
         description: "Data analysis, visualization & real-world case studies.",
         color: "from-purple-600 to-fuchsia-600"
     },
     {
         icon: "fa-brain",
         title: "MACHINE LEARNING",
-        subtitle: "Train Machines to Think Smarter",
+        subtitle: "Online and offline training sessions available",
         description: "Algorithms, models, and practical ML applications.",
         color: "from-pink-600 to-rose-600"
     }
@@ -57,7 +57,7 @@ const trainingPrograms = [
 
 export default function TrainingSection() {
     return (
-        <section className="py-8 md:py-16 relative z-20 bg-zinc-950 text-white overflow-hidden" id="training">
+        <section className="py-20 relative z-20 bg-zinc-950 text-white" id="training">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-4">
                     <motion.span
@@ -76,8 +76,8 @@ export default function TrainingSection() {
                     </motion.h2>
                 </div>
 
-                <div className="mb-20">
-                    <TrainingCarousel programs={trainingPrograms} />
+                <div className="relative">
+                    <TrainingStack programs={trainingPrograms} />
                 </div>
 
                 <div className="mt-20 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
