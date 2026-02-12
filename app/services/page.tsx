@@ -47,7 +47,7 @@ export default function ServicesPage() {
         <main className="min-h-screen bg-[#050505] text-white pt-32 pb-20 relative overflow-hidden">
             {/* Background Animated Trails */}
             <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(99,57,249,0.15),transparent_50%)]" />
+                <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(193,34,125,0.15),transparent_50%)]" />
                 <motion.div
                     animate={{
                         opacity: [0.1, 0.3, 0.1],
@@ -58,20 +58,20 @@ export default function ServicesPage() {
                         repeat: Infinity,
                         ease: "easeInOut"
                     }}
-                    className="absolute top-0 right-0 w-[800px] h-[800px] bg-indigo-500/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2"
+                    className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#c1227d]/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2"
                 />
                 <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150" />
             </div>
 
             <div className="container mx-auto px-6 relative z-10">
                 {/* Hero Section */}
-                <div className="flex flex-col items-center text-center mb-32">
+                <div className="flex flex-col items-center text-center mb-12 md:mb-16">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         className="flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 mb-8"
                     >
-                        <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                        <span className="w-2 h-2 rounded-full bg-[#c1227d] animate-pulse"></span>
                         <span className="text-xs font-bold tracking-[0.2em] uppercase text-white/80">
                             Our Services
                         </span>
@@ -79,7 +79,7 @@ export default function ServicesPage() {
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter mb-8 leading-none uppercase"
+                        className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter mb-8 leading-none uppercase"
                     >
                         Our Services
                     </motion.h1>
@@ -110,7 +110,7 @@ export default function ServicesPage() {
                                     src={service.image}
                                     alt={service.title}
                                     fill
-                                    className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                                    className="object-cover object-top transition-transform duration-1000 group-hover:scale-110"
                                     priority={index < 2}
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent opacity-90" />
@@ -126,7 +126,7 @@ export default function ServicesPage() {
                             {/* Card Content */}
                             <div className="p-10 md:p-14 pt-6">
                                 <motion.h2
-                                    className="text-4xl md:text-6xl font-black tracking-tighter mb-6 leading-none"
+                                    className="text-3xl md:text-5xl font-black tracking-tighter mb-6 leading-none"
                                 >
                                     {service.title}
                                 </motion.h2>
@@ -141,7 +141,7 @@ export default function ServicesPage() {
                                     className="flex items-center gap-3 text-white font-black tracking-widest uppercase text-xs group/btn border-b border-white/10 pb-2 w-fit"
                                 >
                                     Explore Solution
-                                    <i className="fa-solid fa-arrow-right-long text-cyan-400 transition-transform group-hover/btn:translate-x-2" />
+                                    <i className="fa-solid fa-arrow-right-long text-[#c1227d] transition-transform group-hover/btn:translate-x-2" />
                                 </motion.button>
                             </div>
                         </motion.div>

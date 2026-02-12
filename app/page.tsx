@@ -2,7 +2,7 @@ import Hero from "@/components/Ui/Hero/hero";
 import ServicesSection from "@/components/Services/ServicesSection";
 import TrainingSection from "@/components/Training/TrainingSection";
 import AboutUs from "@/components/Ui/AboutUs/AboutUs";
-import WorksSection from "@/components/Works/WorksSection";
+// import WorksSection from "@/components/Works/WorksSection";
 import { ScrollVelocity } from "@/components/ScrollVelocity/ScrollVelocity";
 
 
@@ -27,7 +27,7 @@ export default function Home() {
       </div> */}
       <ServicesSection />
       <TrainingSection />
-      <WorksSection />
+      {/* <WorksSection /> */}
 
       {/* <WhySysbreeze /> */}
     </main>

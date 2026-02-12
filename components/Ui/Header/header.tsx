@@ -7,9 +7,10 @@ import Image from "next/image";
 
 const navLinks = [
     { name: "Services", href: "/services" },
-    { name: "Work", href: "#work" },
+    { name: "Trainings", href: "/trainings" },
+    { name: "Careers", href: "/carrers" },
     { name: "About", href: "#about" },
-    { name: "Contact", href: "#contact" },
+    { name: "Contact", href: "/contact" },
 ];
 
 export default function Header() {
@@ -93,27 +94,57 @@ export default function Header() {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.5, ease: [0.33, 1, 0.68, 1] }}
                         className="md:hidden bg-white border-b border-zinc-100 overflow-hidden"
                     >
-                        <div className="flex flex-col space-y-4 px-6 py-8">
+                        <motion.div
+                            initial="initial"
+                            animate="animate"
+                            variants={{
+                                animate: {
+                                    transition: {
+                                        staggerChildren: 0.1,
+                                        delayChildren: 0.2
+                                    }
+                                }
+                            }}
+                            className="flex flex-col space-y-4 px-6 py-8"
+                        >
                             {navLinks.map((link) => (
-                                <Link
+                                <motion.div
                                     key={link.name}
-                                    href={link.href}
-                                    className="text-lg font-bold text-zinc-600 hover:text-black"
+                                    variants={{
+                                        initial: { opacity: 0, x: -20 },
+                                        animate: { opacity: 1, x: 0 }
+                                    }}
+                                    transition={{ duration: 0.4, ease: "easeOut" }}
+                                >
+                                    <Link
+                                        href={link.href}
+                                        className="text-lg font-bold text-zinc-600 hover:text-pink-600 transition-colors"
+                                        onClick={() => setMobileMenuOpen(false)}
+                                    >
+                                        {link.name}
+                                    </Link>
+                                </motion.div>
+                            ))}
+                            <motion.div
+                                variants={{
+                                    initial: { opacity: 0, scale: 0.9 },
+                                    animate: { opacity: 1, scale: 1 }
+                                }}
+                                transition={{ duration: 0.4, ease: "easeOut" }}
+                                className="pt-2"
+                            >
+                                <Link
+                                    href="/contact"
+                                    className="block w-full py-4 bg-black text-white text-center font-bold rounded-xl hover:bg-zinc-900 transition-all border border-transparent active:scale-[0.98]"
                                     onClick={() => setMobileMenuOpen(false)}
                                 >
-                                    {link.name}
+                                    Get Started
                                 </Link>
-                            ))}
-                            <Link
-                                href="#contact"
-                                className="w-full py-4 bg-black text-white text-center font-bold rounded-xl"
-                                onClick={() => setMobileMenuOpen(false)}
-                            >
-                                Get Started
-                            </Link>
-                        </div>
+                            </motion.div>
+                        </motion.div>
                     </motion.div>
                 )}
             </AnimatePresence>

@@ -6,10 +6,10 @@ import Image from "next/image";
 
 export default function Footer() {
     return (
-        <footer className="bg-black pt-20 pb-10 overflow-hidden">
+        <footer className="bg-black py-12 md:py-16 overflow-hidden">
             <div className="container mx-auto px-6">
                 {/* Large CTA Section */}
-                <div className="mb-5">
+                <div className="mb-12 md:mb-16">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -17,17 +17,18 @@ export default function Footer() {
                         className="text-center"
                     >
                         <h2 className="text-5xl md:text-8xl font-black text-white tracking-tighter mb-8 bg-clip-text text-transparent bg-gradient-to-b from-white to-white/20">
-                            LET'S WORK <br /> TOGETHER
+                            LET&apos;S WORK <br /> TOGETHER
                         </h2>
-                        <motion.a
-                            href="mailto:contact@sysbreeze.com"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="inline-flex items-center gap-4 bg-white text-black px-5 py-3 rounded-full font-black text-lg uppercase tracking-tighter hover:bg-pink-500 transition-colors"
-                        >
-                            CONTACT US
-                            <i className="fa-solid fa-arrow-right-long"></i>
-                        </motion.a>
+                        <Link href="/contact">
+                            <motion.div
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="inline-flex items-center gap-4 bg-white text-black px-5 py-3 rounded-full font-black text-lg uppercase tracking-tighter hover:bg-pink-500 cursor-pointer transition-colors"
+                            >
+                                CONTACT US
+                                <i className="fa-solid fa-arrow-right-long"></i>
+                            </motion.div>
+                        </Link>
                     </motion.div>
                 </div>
 
@@ -54,8 +55,8 @@ export default function Footer() {
                         <ul className="space-y-4">
                             <li><Link href="/" className="text-white/50 hover:text-white text-sm transition-colors">Home</Link></li>
                             <li><Link href="#services" className="text-white/50 hover:text-white text-sm transition-colors">Services</Link></li>
-                            <li><Link href="#training" className="text-white/50 hover:text-white text-sm transition-colors">Training</Link></li>
-                            <li><Link href="#works" className="text-white/50 hover:text-white text-sm transition-colors">Portfolio</Link></li>
+                            <li><Link href="/trainings" className="text-white/50 hover:text-white text-sm transition-colors">Trainings</Link></li>
+                            <li><Link href="/carrers" className="text-white/50 hover:text-white text-sm transition-colors">Careers</Link></li>
                         </ul>
                     </div>
 
