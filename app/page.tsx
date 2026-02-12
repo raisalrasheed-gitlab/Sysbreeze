@@ -1,10 +1,8 @@
 import Hero from "@/components/Ui/Hero/hero";
 import ServicesSection from "@/components/Services/ServicesSection";
 import TrainingSection from "@/components/Training/TrainingSection";
-import WhySysbreeze from "@/components/WhySysbreeze/WhySysbreeze";
 import AboutUs from "@/components/Ui/AboutUs/AboutUs";
 import WorksSection from "@/components/Works/WorksSection";
-import Footer from "@/components/Ui/Footer/Footer";
 import { ScrollVelocity } from "@/components/ScrollVelocity/ScrollVelocity";
 
 
@@ -30,7 +28,7 @@ export default function Home() {
       <ServicesSection />
       <TrainingSection />
       <WorksSection />
-      <Footer />
+
       {/* <WhySysbreeze /> */}
     </main>
   );

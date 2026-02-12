@@ -38,7 +38,7 @@ function TrainingCard({ program, index, total }: { program: TrainingProgram; ind
     const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.8, 1, 1, 0.8]);
 
     return (
-        <div ref={containerRef} className="h-[400px] md:h-[600px] w-full flex items-center justify-center sticky top-0 md:top-20">
+        <div ref={containerRef} className="h-[600px] w-full flex items-center justify-center sticky top-0 md:top-20">
             <motion.div
                 style={{ y, opacity, scale }}
                 className="relative w-full max-w-[400px] aspect-[4/5] rounded-[40px] overflow-hidden shadow-2xl bg-neutral-900 border border-white/10 flex flex-col group transition-all duration-500 hover:border-white/20"

@@ -50,7 +50,7 @@ const services = [
 
 export default function ServicesSection() {
     return (
-        <section className="py-10 md:py-16 bg-black overflow-clip no-scrollbar" id="services">
+        <section className="py-6 md:py-12 bg-black overflow-clip no-scrollbar" id="services">
             <div className="container mx-auto px-0 md:px-6">
                 <div className="text-center mb-6 px-6">
                     <motion.span

@@ -57,7 +57,7 @@ const trainingPrograms = [
 
 export default function TrainingSection() {
     return (
-        <section className="py-20 relative z-20 bg-zinc-950 text-white" id="training">
+        <section className=" md:py-12 relative z-20 bg-zinc-950 text-white" id="training">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-4">
                     <motion.span
@@ -80,7 +80,7 @@ export default function TrainingSection() {
                     <TrainingStack programs={trainingPrograms} />
                 </div>
 
-                <div className="mt-20 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <div className="md:mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                     {[
                         { icon: "fa-certificate", text: "Certification" },
                         { icon: "fa-laptop-code", text: "Live Projects" },
