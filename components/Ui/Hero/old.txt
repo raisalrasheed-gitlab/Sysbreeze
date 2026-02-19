@@ -1,98 +1,96 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
 import { ScrollVelocity } from "../../ScrollVelocity/ScrollVelocity";
 import LiquidEther from "@/components/Gradient/LiquidEther";
 
-const faces = [
-    { name: "SYSBREEZE", x: 0, y: 0 },
-    { name: "IT SERVICES", x: 0, y: -90 },
-    { name: "MARKETING", x: 0, y: -180 },
-    { name: "HR MANAGEMENT", x: 0, y: -270 },
-    { name: "BUSINESS CONSULTING", x: -90, y: 0 },
-    { name: "TRAINING PROGRAMS", x: 90, y: 0 },
-];
-
 export default function Hero() {
-    const [currentFace, setCurrentFace] = useState(0);
-
-    useEffect(() => {
-        const timer = setInterval(() => {
-            setCurrentFace((prev) => (prev + 1) % faces.length);
-        }, 2000);
-        return () => clearInterval(timer);
-    }, []);
-
     return (
         <section className="relative h-full w-full bg-white overflow-hidden flex flex-col items-center justify-center pt-20">
+            {/* Background Liquid Effect */}
+            {/* <div className="absolute inset-0 z-0">
+                <LiquidEther
+                    colors={['#5227FF', '#FF9FFC', '#B19EEF']}
+                    mouseForce={20}
+                    cursorSize={100}
+                    isViscous
+                    viscous={30}
+                    iterationsViscous={32}
+                    iterationsPoisson={32}
+                    resolution={0.5}
+                    isBounce={false}
+                    autoDemo
+                    autoSpeed={0.5}
+                    autoIntensity={2.2}
+                    takeoverDuration={0.25}
+                    autoResumeDelay={3000}
+                    autoRampDuration={0.6}
+                />
+            </div> */}
+
+            {/* Slogans */}
+            {/* <div className="absolute top-24 md:top-28 z-20 text-center px-4">
+                <motion.h2
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    className="text-xs md:text-base font-bold tracking-[0.3em] text-zinc-800 uppercase mb-2 px-8"
+                >
+                    From Branding to AI — We Build, Market & Train for Tomorrow.
+                </motion.h2>
+            </div> */}
+
             {/* 3D Cube Container */}
             <div className="relative z-10 w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 perspective-1000 mt-28 md:mt-20 ">
                 <motion.div
                     className="w-full h-full relative preserve-3d"
                     animate={{
-                        rotateX: faces[currentFace].x,
-                        rotateY: faces[currentFace].y,
+                        rotateX: [0, 360],
+                        rotateY: [0, 360],
                     }}
                     transition={{
-                        duration: 1.2,
-                        ease: [0.34, 1.56, 0.64, 1], // Bouncy premium ease
+                        duration: 30,
+                        repeat: Infinity,
+                        ease: "linear",
                     }}
                 >
+                    {/* ... cube faces remain same ... */}
                     {/* Cube Faces */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#D81B8C] via-[#612D91] to-[#21094E] border border-white/20 face-front backdrop-blur-sm overflow-hidden group">
-                        <motion.div
-                            animate={{ opacity: currentFace === 0 ? 1 : 0.4 }}
-                            className="flex flex-col items-center justify-center w-full h-full p-6 text-center"
-                        >
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#D81B8C] via-[#612D91] to-[#21094E] border border-white/20 face-front  backdrop-blur-sm">
+                        <div className="flex flex-col items-center justify-center w-full h-full p-6 text-center">
                             <h3 className="text-white font-black text-3xl md:text-4xl tracking-tighter mb-4 italic">SYSBREEZE</h3>
                             <p className="text-white/80 text-[10px] md:text-xs leading-tight tracking-[0.2em] uppercase font-medium">Building Brands. Powering Growth. Shaping Future Tech Leaders.</p>
-                        </motion.div>
+                        </div>
                     </div>
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#D81B8C] via-[#612D91] to-[#21094E] border border-white/20 face-back backdrop-blur-sm overflow-hidden group">
-                        <motion.div
-                            animate={{ opacity: currentFace === 2 ? 1 : 0.4 }}
-                            className="flex flex-col items-center justify-center w-full h-full p-6 text-center"
-                        >
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#D81B8C] via-[#612D91] to-[#21094E] border border-white/20 face-back  backdrop-blur-sm">
+                        <div className="flex flex-col items-center justify-center w-full h-full p-6 text-center">
                             <h3 className="text-white font-black text-2xl md:text-3xl tracking-tighter mb-4">MARKETING</h3>
                             <p className="text-white/80 text-[10px] md:text-xs leading-tight tracking-[0.2em] uppercase font-medium">Reach the Right Audience. Convert Better. Grow Faster.</p>
-                        </motion.div>
+                        </div>
                     </div>
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#D81B8C] via-[#612D91] to-[#21094E] border border-white/20 face-left backdrop-blur-sm overflow-hidden group">
-                        <motion.div
-                            animate={{ opacity: currentFace === 3 ? 1 : 0.4 }}
-                            className="flex flex-col items-center justify-center w-full h-full p-6 text-center"
-                        >
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#D81B8C] via-[#612D91] to-[#21094E] border border-white/20 face-left  backdrop-blur-sm">
+                        <div className="flex flex-col items-center justify-center w-full h-full p-6 text-center">
                             <h3 className="text-white font-black text-2xl md:text-3xl tracking-tighter mb-4 uppercase">HR MANAGEMENT</h3>
                             <p className="text-white/80 text-[10px] md:text-xs leading-tight tracking-[0.2em] uppercase font-medium">People. Process. Performance.</p>
-                        </motion.div>
+                        </div>
                     </div>
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#D81B8C] via-[#612D91] to-[#21094E] border border-white/20 face-right backdrop-blur-sm overflow-hidden group">
-                        <motion.div
-                            animate={{ opacity: currentFace === 1 ? 1 : 0.4 }}
-                            className="flex flex-col items-center justify-center w-full h-full p-6 text-center"
-                        >
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#D81B8C] via-[#612D91] to-[#21094E] border border-white/20 face-right  backdrop-blur-sm">
+                        <div className="flex flex-col items-center justify-center w-full h-full p-6 text-center">
                             <h3 className="text-white font-black text-2xl md:text-3xl tracking-tighter mb-4">IT SERVICES</h3>
                             <p className="text-white/80 text-[10px] md:text-xs leading-tight tracking-[0.2em] uppercase font-medium">Websites That Look Great & Work Even Better</p>
-                        </motion.div>
+                        </div>
                     </div>
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#D81B8C] via-[#612D91] to-[#21094E] border border-white/20 face-top backdrop-blur-sm overflow-hidden group">
-                        <motion.div
-                            animate={{ opacity: currentFace === 4 ? 1 : 0.4 }}
-                            className="flex flex-col items-center justify-center w-full h-full p-6 text-center"
-                        >
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#D81B8C] via-[#612D91] to-[#21094E] border border-white/20 face-top  backdrop-blur-sm">
+                        <div className="flex flex-col items-center justify-center w-full h-full p-6 text-center">
                             <h3 className="text-white font-black text-2xl md:text-3xl tracking-tighter mb-4 uppercase">BUSINESS CONSULTING</h3>
                             <p className="text-white/80 text-[10px] md:text-xs leading-tight tracking-[0.2em] uppercase font-medium">Turn Your Vision into a Powerful Brand Identity</p>
-                        </motion.div>
+                        </div>
                     </div>
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#D81B8C] via-[#612D91] to-[#21094E] border border-white/20 face-bottom backdrop-blur-sm overflow-hidden group">
-                        <motion.div
-                            animate={{ opacity: currentFace === 5 ? 1 : 0.4 }}
-                            className="flex flex-col items-center justify-center w-full h-full p-6 text-center"
-                        >
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#D81B8C] via-[#612D91] to-[#21094E] border border-white/20 face-bottom  backdrop-blur-sm">
+                        <div className="flex flex-col items-center justify-center w-full h-full p-6 text-center">
                             <h3 className="text-white font-black text-2xl md:text-3xl tracking-tighter mb-4 uppercase">TRAINING PROGRAMS</h3>
                             <p className="text-white/80 text-[10px] md:text-xs leading-tight tracking-[0.2em] uppercase font-medium">Industry-Focused Training for Real Careers</p>
-                        </motion.div>
+                        </div>
                     </div>
                 </motion.div>
             </div>
@@ -120,6 +118,14 @@ export default function Hero() {
                     </div>
                     <span className="text-black font-bold tracking-tight text-sm md:text-lg whitespace-nowrap uppercase">UPGRADE YOUR SKILLS</span>
                 </motion.button>
+            </div>
+
+            {/* Dynamic Scrolling Sections */}
+
+
+            {/* Footer Branding Text */}
+            <div className="absolute bottom-8   w-full px-6 md:px-12 flex  md:flex-row items-center justify-center text-[10px] md:text-xs font-medium tracking-widest text-zinc-400 uppercase gap-4 md:gap-0">
+
             </div>
 
             <style jsx global>{`

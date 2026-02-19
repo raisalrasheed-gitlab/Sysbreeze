@@ -5,12 +5,13 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
-const navLinks = [
-    { name: "Services", href: "/services" },
-    { name: "Trainings", href: "/trainings" },
-    { name: "Careers", href: "/carrers" },
-    { name: "About", href: "#about" },
-    { name: "Contact", href: "/contact" },
+const navLinks = [{ name: "Home", href: "/" },
+{ name: "About Us", href: "#about" },
+{ name: "Services", href: "/services" },
+{ name: "Trainings", href: "/trainings" },
+{ name: "Careers", href: "/careers" },
+
+{ name: "Contact Us", href: "/contact" },
 ];
 
 export default function Header() {
@@ -57,9 +58,9 @@ export default function Header() {
                     ))}
                     <Link
                         href="#contact"
-                        className="px-5 py-2.5 bg-black text-white text-sm font-bold rounded-full hover:bg-zinc-800 transition-all transform hover:scale-105 active:scale-95 shadow-lg"
+                        className="px-5 py-2.5 bg-gradient-to-br from-[#D81B8C] via-[#612D91] to-[#21094E] text-white text-sm font-bold rounded-full hover:brightness-110 transition-all transform hover:scale-105 active:scale-95 shadow-lg border border-white/20"
                     >
-                        Get Started
+                        Ai Powered Training Programs
                     </Link>
                 </nav>
 
@@ -67,22 +68,20 @@ export default function Header() {
                 <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="md:hidden w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-700 via-purple-800 to-zinc-950 flex flex-col items-center justify-center gap-1.5 shadow-lg border border-white/10 group overflow-hidden"
+                    className="md:hidden w-12 h-12 rounded-2xl flex flex-col items-center justify-center gap-1.5 group overflow-hidden"
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 >
                     <motion.span
                         animate={mobileMenuOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
-                        className="w-6 h-0.5 bg-white/80 rounded-full transition-colors group-hover:bg-white"
+                        className="w-8 h-1 bg-gradient-to-br from-indigo-700 via-purple-800 rounded-full transition-colors group-hover:from-white group-hover:to-white"
                     />
                     <motion.span
                         animate={mobileMenuOpen ? { opacity: 0, x: -20 } : { opacity: 1, x: 0 }}
-                        className="w-4 h-0.5 bg-white/80 rounded-full transition-colors group-hover:bg-white"
-                        style={{ alignSelf: 'center' }}
+                        className="w-8 h-1 bg-gradient-to-br from-indigo-700 via-purple-800 rounded-full transition-colors group-hover:from-white group-hover:to-white"
                     />
                     <motion.span
                         animate={mobileMenuOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
-                        className="w-5 h-0.5 bg-white/80 rounded-full transition-colors group-hover:bg-white"
-                        style={{ alignSelf: 'flex-start', marginLeft: '12px' }}
+                        className="w-8 h-1 bg-gradient-to-br from-indigo-700 via-purple-800 rounded-full transition-colors group-hover:from-white group-hover:to-white"
                     />
                 </motion.button>
             </div>
@@ -91,11 +90,11 @@ export default function Header() {
             <AnimatePresence>
                 {mobileMenuOpen && (
                     <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.5, ease: [0.33, 1, 0.68, 1] }}
-                        className="md:hidden bg-white border-b border-zinc-100 overflow-hidden"
+                        initial={{ opacity: 0, height: 0, scale: 0.95, filter: "blur(10px)" }}
+                        animate={{ opacity: 1, height: "auto", scale: 1, filter: "blur(0px)" }}
+                        exit={{ opacity: 0, height: 0, scale: 0.95, filter: "blur(10px)" }}
+                        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                        className="md:hidden bg-white/95 backdrop-blur-xl border-b border-zinc-100 overflow-hidden"
                     >
                         <motion.div
                             initial="initial"
@@ -103,21 +102,36 @@ export default function Header() {
                             variants={{
                                 animate: {
                                     transition: {
-                                        staggerChildren: 0.1,
-                                        delayChildren: 0.2
+                                        staggerChildren: 0.08,
+                                        delayChildren: 0.1
                                     }
                                 }
                             }}
-                            className="flex flex-col space-y-4 px-6 py-8"
+                            className="flex flex-col space-y-4 px-6 py-4"
                         >
-                            {navLinks.map((link) => (
+                            {navLinks.map((link, index) => (
                                 <motion.div
                                     key={link.name}
                                     variants={{
-                                        initial: { opacity: 0, x: -20 },
-                                        animate: { opacity: 1, x: 0 }
+                                        initial: {
+                                            opacity: 0,
+                                            x: index % 2 === 0 ? -50 : 50,
+                                            rotateX: -20,
+                                            filter: "blur(10px)"
+                                        },
+                                        animate: {
+                                            opacity: 1,
+                                            x: 0,
+                                            rotateX: 0,
+                                            filter: "blur(0px)"
+                                        }
                                     }}
-                                    transition={{ duration: 0.4, ease: "easeOut" }}
+                                    transition={{
+                                        type: "spring",
+                                        stiffness: 100,
+                                        damping: 15,
+                                        mass: 1
+                                    }}
                                 >
                                     <Link
                                         href={link.href}
@@ -130,18 +144,23 @@ export default function Header() {
                             ))}
                             <motion.div
                                 variants={{
-                                    initial: { opacity: 0, scale: 0.9 },
-                                    animate: { opacity: 1, scale: 1 }
+                                    initial: { opacity: 0, scale: 0.8, y: 20 },
+                                    animate: { opacity: 1, scale: 1, y: 0 }
                                 }}
-                                transition={{ duration: 0.4, ease: "easeOut" }}
-                                className="pt-2"
+                                transition={{
+                                    type: "spring",
+                                    stiffness: 120,
+                                    damping: 20,
+                                    delay: 0.4
+                                }}
+                                className="pt-4"
                             >
                                 <Link
                                     href="/contact"
-                                    className="block w-full py-4 bg-black text-white text-center font-bold rounded-xl hover:bg-zinc-900 transition-all border border-transparent active:scale-[0.98]"
+                                    className="block w-full py-4 bg-gradient-to-br from-[#D81B8C] via-[#612D91] to-[#21094E] text-white text-center font-bold rounded-xl hover:brightness-110 transition-all border border-white/20 active:scale-[0.98]"
                                     onClick={() => setMobileMenuOpen(false)}
                                 >
-                                    Get Started
+                                    Ai Powered Training Programs
                                 </Link>
                             </motion.div>
                         </motion.div>

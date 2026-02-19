@@ -1,5 +1,6 @@
 "use client";
 
+import Map from "@/components/Map/Map";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -76,13 +77,13 @@ export default function ContactPage() {
                             {
                                 icon: "fa-envelope",
                                 label: "Email Address",
-                                value: "hello@maxelstudio.com",
+                                value: "info@sysbreeze.com",
                                 color: "text-[#c1227d]"
                             },
                             {
                                 icon: "fa-location-dot",
                                 label: "Location",
-                                value: "Remote · Worldwide",
+                                value: "Kinfra Techno Park, Calicut, Kerala, India",
                                 color: "text-[#c1227d]"
                             },
                             {
@@ -194,16 +195,12 @@ export default function ContactPage() {
                         className="flex flex-col"
                     >
                         <div className="relative aspect-[4/3] rounded-[3rem] overflow-hidden mb-10 border border-white/5">
-                            <img
-                                src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop"
-                                alt="Office Interior"
-                                className="object-cover w-full h-full grayscale hover:grayscale-0 transition-all duration-1000"
-                            />
+                            <Map />
                             <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent opacity-60" />
                         </div>
 
                         <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-8 bg-gradient-to-r from-white to-white/40 bg-clip-text text-transparent">
-                            White Bear Lake
+                            Kinfra Park
                         </h2>
 
                         <div className="space-y-8">
@@ -212,7 +209,7 @@ export default function ContactPage() {
                                     Open:
                                 </h4>
                                 <p className="text-xl md:text-2xl text-white/80 font-medium">
-                                    Monday – Sunday, 9am – 7pm EST
+                                    Monday – Friday, 9am – 5pm IST
                                 </p>
                             </div>
 
@@ -221,17 +218,26 @@ export default function ContactPage() {
                                     Address:
                                 </h4>
                                 <p className="text-xl md:text-2xl text-white/80 font-medium leading-tight">
-                                    2401 East Buffalo St. <br />
-                                    White Bear Lake, MN 55110
+                                    Sysbreeze Technologies Pvt. Ltd.
+                                    Neospace Building
+                                    Basement 1
+                                    Kinfra Techno Park, Calicut <br />
+                                    Kerala, India
                                 </p>
                             </div>
 
                             <motion.button
                                 whileHover={{ x: 10 }}
                                 className="flex items-center gap-3 text-white font-black tracking-[0.2em] uppercase text-xs group/loc pt-4"
+                            >  <a
+                                href="https://www.google.com/maps/dir/?api=1&destination=11.1517728,75.8900253"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex gap-2 items-center"
                             >
-                                <i className="fa-solid fa-arrow-right text-[#c1227d] transition-transform group-hover/loc:translate-x-1" />
-                                Get Directions
+                                    <i className="fa-solid fa-arrow-right text-[#c1227d] transition-transform group-hover/loc:translate-x-1" />
+                                    Get Directions
+                                </a>
                             </motion.button>
                         </div>
                     </motion.div>

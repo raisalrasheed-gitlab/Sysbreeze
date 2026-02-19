@@ -9,7 +9,7 @@ const trainingPrograms = [
         title: "HR TRAINING",
         description: "Master the essentials of Human Resource Management, from talent acquisition and onboarding to payroll administration and labor law compliance. Our curriculum provides hands-on exposure to modern HR tools and real-world scenarios, ensuring you're ready for the dynamic corporate landscape. Available in both online and offline formats with guaranteed placement support.",
         image: "/images/hr.jpg",
-        tags: ["Certification", "Placement", "Online & Offline"],
+        tags: ["Certification", "Placement Assistance", "Online & Offline"],
         href: "#"
     },
     {
@@ -37,7 +37,7 @@ const trainingPrograms = [
         title: "MERN STACK",
         description: "Dominate modern web development with the MERN Stack (MongoDB, Express, React, and Node.js). Our intensive course takes you from frontend design to backend architecture, focusing on real-time application building and efficient database management. This program is ideal for those looking to build fast, data-driven web solutions. Available through comprehensive online and offline training sessions.",
         image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=2070&auto=format&fit=crop",
-        tags: ["React", "Placement", "Online & Offline"],
+        tags: ["React", "Placement Assistance", "Online & Offline"],
         href: "#"
     },
     {
