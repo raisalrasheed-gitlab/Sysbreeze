@@ -65,7 +65,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${instrumentSans.variable} ${geistMono.variable} antialiased`}
+        className={`${instrumentSans.variable} ${geistMono.variable} antialiased relative`}
       >
         <Header />
         {children}

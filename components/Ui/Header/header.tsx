@@ -41,7 +41,7 @@ export default function Header() {
                         width={100}
                         height={60}
                         className="object-contain"
-                        style={{ height: "auto" }}
+                        style={{ width: "auto", height: "auto" }}
                     />
                 </Link>
 
@@ -95,7 +95,7 @@ export default function Header() {
                         animate={{ opacity: 1, height: "auto", scale: 1, filter: "blur(0px)" }}
                         exit={{ opacity: 0, height: 0, scale: 0.95, filter: "blur(10px)" }}
                         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                        className="md:hidden bg-white/95 backdrop-blur-xl border-b border-zinc-100 overflow-hidden"
+                        className="md:hidden relative bg-white/95 backdrop-blur-xl border-b border-zinc-100 overflow-hidden"
                     >
                         <motion.div
                             initial="initial"

@@ -62,6 +62,15 @@ export default function Hero() {
 
     return (
         <section className="relative h-full w-full bg-black overflow-hidden flex flex-col items-center justify-center pt-20">
+            {/* Background Marquee */}
+            <div className="absolute inset-0 z-0 pointer-events-none flex flex-col justify-center opacity-50 select-none">
+                <ScrollVelocity
+                    texts={["SYSBREEZE SOLUTIONS | DIGITAL INNOVATION | BUSINESS SERVICES | FUTURE TECH"]}
+                    velocity={50}
+                    className="text-[20vw] font-black text-white uppercase "
+                />
+            </div>
+
             {/* 3D Cube Container */}
             <div className="relative z-10 w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 perspective-1000 mt-28 md:mt-20 ">
                 <motion.div
