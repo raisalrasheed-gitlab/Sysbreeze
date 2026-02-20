@@ -33,7 +33,7 @@ export default function Header() {
                 : "py-3 bg-white"
                 }`}
         >
-            <div className="container mx-auto px-6 flex items-center justify-between">
+            <div className="container mx-auto px-6 flex items-center justify-between relative">
                 <Link href="/" className="relative flex items-center">
                     <Image
                         src="/Gemini_Generated_Image_2w2muj2w2muj2w2m.png"
@@ -41,6 +41,7 @@ export default function Header() {
                         width={100}
                         height={60}
                         className="object-contain"
+                        style={{ height: "auto" }}
                     />
                 </Link>
 
@@ -68,7 +69,7 @@ export default function Header() {
                 <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="md:hidden w-12 h-12 rounded-2xl flex flex-col items-center justify-center gap-1.5 group overflow-hidden"
+                    className="md:hidden relative w-12 h-12 rounded-2xl flex flex-col items-center justify-center gap-1.5 group overflow-hidden"
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 >
                     <motion.span

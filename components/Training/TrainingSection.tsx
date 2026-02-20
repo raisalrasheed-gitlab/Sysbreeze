@@ -84,7 +84,7 @@ export default function TrainingSection() {
                     {[
                         { icon: "fa-certificate", text: "Certification" },
                         { icon: "fa-laptop-code", text: "Live Projects" },
-                        { icon: "fa-briefcase", text: "Placement" },
+                        { icon: "fa-briefcase", text: "Placement Assistance" },
                         { icon: "fa-chalkboard-user", text: "Expert Trainers" },
                         { icon: "fa-tools", text: "Latest Tools" },
                         { icon: "fa-headset", text: "Support" }

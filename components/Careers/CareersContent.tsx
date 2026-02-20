@@ -51,7 +51,7 @@ const openPositions = [
     }
 ];
 
-export default function CareersPage() {
+export default function CareersContent() {
     return (
         <main className="min-h-screen bg-[#050505] text-white pt-32 pb-20 relative overflow-hidden">
             {/* Background Effects */}

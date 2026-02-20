@@ -121,7 +121,7 @@ function ServiceCardContent({ service, index = 0, isGrid = false }: { service: t
                     <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="px-8 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-full text-white font-bold text-sm tracking-widest uppercase transition-colors backdrop-blur-sm group/btn flex items-center gap-2 mx-auto md:mx-0"
+                        className="px-8 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-full text-white font-bold text-sm tracking-widest uppercase transition-colors backdrop-blur-sm group/btn flex items-center gap-2 mx-auto"
                     >
                         Explore More
                         <i className="fa-solid fa-arrow-right-long transition-transform group-hover/btn:translate-x-1"></i>

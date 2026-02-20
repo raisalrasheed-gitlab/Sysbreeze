@@ -2,8 +2,10 @@
 
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import { ScrollVelocity } from "../../ScrollVelocity/ScrollVelocity";
-import LiquidEther from "@/components/Gradient/LiquidEther";
+
+
 
 const faces = [
     { name: "SYSBREEZE", x: 0, y: 0 },
@@ -16,12 +18,46 @@ const faces = [
 
 export default function Hero() {
     const [currentFace, setCurrentFace] = useState(0);
+    const [rotationY, setRotationY] = useState(0);
+    const [rotationX, setRotationX] = useState(15);
 
     useEffect(() => {
-        const timer = setInterval(() => {
-            setCurrentFace((prev) => (prev + 1) % faces.length);
-        }, 2000);
-        return () => clearInterval(timer);
+        let isMounted = true;
+        const sequence = async () => {
+            if (!isMounted) return;
+
+            // 1. Initial State / Pause
+            await new Promise(r => setTimeout(r, 2000));
+            if (!isMounted) return;
+
+            // 2. Transition to Top Corner View (Tilt up + rotate 45 deg)
+            setRotationX(35);
+            setRotationY(prev => prev - 45);
+            await new Promise(r => setTimeout(r, 2000));
+            if (!isMounted) return;
+
+            // 3. Direct Tilt to Bottom Corner View (Tilt down, stay at 45 deg)
+            setRotationX(-35);
+            await new Promise(r => setTimeout(r, 2000));
+            if (!isMounted) return;
+
+            // 4. Final Step: Transition to Next Face (Restore base tilt + rotate last 45 deg)
+            setRotationX(15);
+            setRotationY(prev => prev - 45);
+
+            // Increment face index for opacity/content tracking
+            // We use % 6 if we want to loop through all faces, 
+            // but the Y-belt only has 4 faces in this structure.
+            // If we want to include top/bottom, we'd need a more complex sequence.
+            // For now, let's stick to the 4 horizontal faces as per the snippet's logic.
+            setCurrentFace(prev => (prev + 1) % 4);
+
+            // Loop recursively
+            if (isMounted) sequence();
+        };
+
+        sequence();
+        return () => { isMounted = false; };
     }, []);
 
     return (
@@ -31,12 +67,12 @@ export default function Hero() {
                 <motion.div
                     className="w-full h-full relative preserve-3d"
                     animate={{
-                        rotateX: faces[currentFace].x,
-                        rotateY: faces[currentFace].y,
+                        rotateX: rotationX,
+                        rotateY: rotationY,
                     }}
                     transition={{
-                        duration: 1.2,
-                        ease: [0.34, 1.56, 0.64, 1], // Bouncy premium ease
+                        duration: 2,
+                        ease: [0.22, 1, 0.36, 1],
                     }}
                 >
                     {/* Cube Faces */}
