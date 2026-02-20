@@ -29,17 +29,17 @@ export default function Header() {
     return (
         <header
             className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled
-                ? "py-3 bg-white backdrop-blur-md shadow-sm border-b border-gray-50"
+                ? "py-2 bg-white backdrop-blur-md shadow-sm border-b border-gray-50"
                 : "py-3 bg-white"
                 }`}
         >
             <div className="container mx-auto px-6 flex items-center justify-between relative">
                 <Link href="/" className="relative flex items-center">
                     <Image
-                        src="/Gemini_Generated_Image_2w2muj2w2muj2w2m.png"
+                        src="/Gemini_Generated_Image_gglehgglehgglehgn.png"
                         alt="Sysbreeze Logo"
-                        width={100}
-                        height={60}
+                        width={120}
+                        height={90}
                         className="object-contain"
                         style={{ width: "auto", height: "auto" }}
                     />
@@ -69,21 +69,28 @@ export default function Header() {
                 <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="md:hidden relative w-12 h-12 rounded-2xl flex flex-col items-center justify-center gap-1.5 group overflow-hidden"
+                    className="md:hidden relative w-12 h-12 rounded-2xl flex items-center justify-center group overflow-hidden"
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 >
-                    <motion.span
-                        animate={mobileMenuOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
-                        className="w-8 h-1 bg-gradient-to-br from-indigo-700 via-purple-800 rounded-full transition-colors group-hover:from-white group-hover:to-white"
-                    />
-                    <motion.span
-                        animate={mobileMenuOpen ? { opacity: 0, x: -20 } : { opacity: 1, x: 0 }}
-                        className="w-8 h-1 bg-gradient-to-br from-indigo-700 via-purple-800 rounded-full transition-colors group-hover:from-white group-hover:to-white"
-                    />
-                    <motion.span
-                        animate={mobileMenuOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
-                        className="w-8 h-1 bg-gradient-to-br from-indigo-700 via-purple-800 rounded-full transition-colors group-hover:from-white group-hover:to-white"
-                    />
+                    <div className="grid grid-cols-2 gap-1 p-1">
+                        {[0, 1, 2, 3].map((i) => (
+                            <motion.div
+                                key={i}
+                                animate={mobileMenuOpen ? {
+                                    rotate: i === 0 || i === 3 ? 45 : -45,
+                                    scale: 1.1,
+                                    x: i === 0 || i === 2 ? 2 : -2,
+                                    y: i === 0 || i === 1 ? 2 : -2,
+                                } : {
+                                    rotate: 0,
+                                    scale: 1,
+                                    x: 0,
+                                    y: 0
+                                }}
+                                className="w-4 h-4 rounded-sm bg-gradient-to-br from-[#D81B8C] via-[#612D91] to-[#21094E] transition-colors group-hover:brightness-125"
+                            />
+                        ))}
+                    </div>
                 </motion.button>
             </div>
 
