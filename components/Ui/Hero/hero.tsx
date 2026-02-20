@@ -61,7 +61,7 @@ export default function Hero() {
     }, []);
 
     return (
-        <section className="relative h-full w-full bg-white overflow-hidden flex flex-col items-center justify-center pt-20">
+        <section className="relative h-full w-full bg-black overflow-hidden flex flex-col items-center justify-center pt-20">
             {/* 3D Cube Container */}
             <div className="relative z-10 w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 perspective-1000 mt-28 md:mt-20 ">
                 <motion.div
