@@ -90,6 +90,7 @@ export default function ThreeDCarousel({ items }: ThreeDCarouselProps) {
                 <button
                     onClick={handlePrev}
                     className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all"
+                    aria-label="Previous Item"
                 >
                     <i className="fa-solid fa-chevron-left"></i>
                 </button>
@@ -104,6 +105,7 @@ export default function ThreeDCarousel({ items }: ThreeDCarouselProps) {
                 <button
                     onClick={handleNext}
                     className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all"
+                    aria-label="Next Item"
                 >
                     <i className="fa-solid fa-chevron-right"></i>
                 </button>

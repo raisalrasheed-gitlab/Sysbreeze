@@ -42,7 +42,7 @@ export default function TrainingCarousel({ programs }: TrainingCarouselProps) {
         <div
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
-            className="relative h-[450px] sm:h-[600px] w-full flex items-center justify-center perspective-1000"
+            className="relative h-[450px] sm:h-[600px] w-full flex items-center justify-center perspective-1000 overflow-hidden"
         >
             <div className="relative w-full max-w-5xl h-full flex items-center justify-center">
                 <AnimatePresence initial={false}>
@@ -121,6 +121,7 @@ export default function TrainingCarousel({ programs }: TrainingCarouselProps) {
                 <button
                     onClick={handlePrev}
                     className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:border-white hover:text-black transition-all"
+                    aria-label="Previous Training"
                 >
                     <i className="fa-solid fa-chevron-left"></i>
                 </button>
@@ -130,12 +131,14 @@ export default function TrainingCarousel({ programs }: TrainingCarouselProps) {
                             key={i}
                             onClick={() => setIndex(i)}
                             className={`h-2 rounded-full transition-all duration-300 ${i === index ? 'w-8 bg-[#f6339a]' : 'w-2 bg-white/20'}`}
+                            aria-label={`Go to training ${i + 1}`}
                         />
                     ))}
                 </div>
                 <button
                     onClick={handleNext}
                     className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:border-white hover:text-black transition-all"
+                    aria-label="Next Training"
                 >
                     <i className="fa-solid fa-chevron-right"></i>
                 </button>

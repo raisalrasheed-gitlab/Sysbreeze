@@ -46,7 +46,7 @@ export default function Header() {
                 </Link>
 
                 {/* Desktop Navigation */}
-                <nav className="hidden md:flex items-center space-x-8">
+                <nav className="hidden lg:flex items-center space-x-8">
                     {navLinks.map((link) => (
                         <Link
                             key={link.name}
@@ -61,7 +61,7 @@ export default function Header() {
                         href="#contact"
                         className="px-5 py-2.5 bg-gradient-to-br from-[#D81B8C] via-[#612D91] to-[#21094E] text-white text-sm font-bold rounded-full hover:brightness-110 transition-all transform hover:scale-105 active:scale-95 shadow-lg border border-white/20"
                     >
-                        Ai Powered Training Programs
+                        Get Started
                     </Link>
                 </nav>
 
@@ -69,8 +69,9 @@ export default function Header() {
                 <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="md:hidden relative w-12 h-12 rounded-2xl flex items-center justify-center group overflow-hidden"
+                    className="lg:hidden relative w-12 h-12 rounded-2xl flex items-center justify-center group overflow-hidden"
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                    aria-label={mobileMenuOpen ? "Close Menu" : "Open Menu"}
                 >
                     <div className="grid grid-cols-2 gap-1 p-1">
                         {[0, 1, 2, 3].map((i) => (
@@ -102,7 +103,7 @@ export default function Header() {
                         animate={{ opacity: 1, height: "auto", scale: 1, filter: "blur(0px)" }}
                         exit={{ opacity: 0, height: 0, scale: 0.95, filter: "blur(10px)" }}
                         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                        className="md:hidden relative bg-white/95 backdrop-blur-xl border-b border-zinc-100 overflow-hidden"
+                        className="lg:hidden relative bg-white/95 backdrop-blur-xl border-b border-zinc-100 overflow-hidden"
                     >
                         <motion.div
                             initial="initial"

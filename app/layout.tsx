@@ -1,17 +1,33 @@
 import type { Metadata } from "next";
-import { Instrument_Sans, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/Ui/Header/header";
 import Footer from "@/components/Ui/Footer/Footer";
 
-const instrumentSans = Instrument_Sans({
+const instrumentSans = localFont({
+  src: [
+    {
+      path: "../public/font/static/InstrumentSans-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/font/static/InstrumentSans-Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../public/font/static/InstrumentSans-SemiBold.ttf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../public/font/static/InstrumentSans-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
   variable: "--font-instrument-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -65,7 +81,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${instrumentSans.variable} ${geistMono.variable} antialiased relative`}
+        className={`${instrumentSans.variable} antialiased relative overflow-x-hidden w-full`}
       >
         <Header />
         {children}

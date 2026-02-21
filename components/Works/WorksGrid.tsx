@@ -66,6 +66,7 @@ export default function WorksGrid({ projects }: WorksGridProps) {
                             <button
                                 onClick={() => setSelectedProject(null)}
                                 className="absolute top-8 right-8 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 flex items-center justify-center text-white text-xl transition-all"
+                                aria-label="Close Project View"
                             >
                                 <i className="fa-solid fa-xmark"></i>
                             </button>

@@ -100,7 +100,10 @@ export default function Footer() {
             </div>
 
             {/* Background Decorative Text */}
-            <div className="opacity-[0.02] pointer-events-none select-none absolute bottom-0 left-0 w-full overflow-hidden text-white font-black text-[30vw] leading-none text-center">
+            <div
+                aria-hidden="true"
+                className="opacity-[0.05] pointer-events-none select-none absolute bottom-0 left-0 w-full overflow-hidden text-white font-black text-[30vw] leading-none text-center"
+            >
                 SYSBREEZE
             </div>
         </footer>

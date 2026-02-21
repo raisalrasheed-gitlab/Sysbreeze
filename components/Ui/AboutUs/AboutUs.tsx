@@ -25,7 +25,7 @@ const SecondSection = () => {
     return (
         <section
             ref={containerRef}
-            className="bg-black text-white overflow-hidden select-none pt-6"
+            className="relative bg-black text-white overflow-hidden select-none pt-6"
         >
             {/* <div className="relative flex whitespace-nowrap overflow-hidden">
                 <motion.div
