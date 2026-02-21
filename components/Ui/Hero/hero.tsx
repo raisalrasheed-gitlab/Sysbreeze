@@ -86,6 +86,9 @@ export default function Hero() {
                 >
                     {/* Cube Faces */}
                     <div className="absolute inset-0 bg-gradient-to-br from-[#D81B8C] via-[#612D91] to-[#21094E] border border-white/20 face-front backdrop-blur-sm overflow-hidden group">
+                        <div className="absolute top-2 left-2 w-12 h-12 z-20">
+                            <img src="/Gemini_Generated_Image_bmzwfebmzwfebmzw-removebg-previewn.png" alt="Logo" className="w-full h-full object-contain" />
+                        </div>
                         <motion.div
                             animate={{ opacity: currentFace === 0 ? 1 : 0.4 }}
                             className="flex flex-col items-center justify-center w-full h-full p-6 text-center"
@@ -94,7 +97,10 @@ export default function Hero() {
                             <p className="text-white/80 text-[10px] md:text-xs leading-tight tracking-[0.2em] uppercase font-medium">Building Brands. Powering Growth. Shaping Future Tech Leaders.</p>
                         </motion.div>
                     </div>
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#D81B8C] via-[#612D91] to-[#21094E] border border-white/20 face-back backdrop-blur-sm overflow-hidden group">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#D81B8C] via-[#612D91] to-[#21094E] border border-white/20 face-back backdrop-blur-sm  group">
+                        <div className="absolute top-2 left-2 w-12 h-12 z-20">
+                            <img src="/Gemini_Generated_Image_bmzwfebmzwfebmzw-removebg-previewn.png" alt="Logo" className="w-full h-full object-contain" />
+                        </div>
                         <motion.div
                             animate={{ opacity: currentFace === 2 ? 1 : 0.4 }}
                             className="flex flex-col items-center justify-center w-full h-full p-6 text-center"
@@ -104,6 +110,9 @@ export default function Hero() {
                         </motion.div>
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-br from-[#D81B8C] via-[#612D91] to-[#21094E] border border-white/20 face-left backdrop-blur-sm overflow-hidden group">
+                        <div className="absolute top-2 left-2 w-12 h-12 z-20">
+                            <img src="/Gemini_Generated_Image_bmzwfebmzwfebmzw-removebg-previewn.png" alt="Logo" className="w-full h-full object-contain" />
+                        </div>
                         <motion.div
                             animate={{ opacity: currentFace === 3 ? 1 : 0.4 }}
                             className="flex flex-col items-center justify-center w-full h-full p-6 text-center"
@@ -113,6 +122,9 @@ export default function Hero() {
                         </motion.div>
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-br from-[#D81B8C] via-[#612D91] to-[#21094E] border border-white/20 face-right backdrop-blur-sm overflow-hidden group">
+                        <div className="absolute top-2 left-2 w-12 h-12 z-20">
+                            <img src="/Gemini_Generated_Image_bmzwfebmzwfebmzw-removebg-previewn.png" alt="Logo" className="w-full h-full object-contain" />
+                        </div>
                         <motion.div
                             animate={{ opacity: currentFace === 1 ? 1 : 0.4 }}
                             className="flex flex-col items-center justify-center w-full h-full p-6 text-center"
@@ -122,6 +134,9 @@ export default function Hero() {
                         </motion.div>
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-br from-[#D81B8C] via-[#612D91] to-[#21094E] border border-white/20 face-top backdrop-blur-sm overflow-hidden group">
+                        <div className="absolute top-2 left-2 w-12 h-12 z-20">
+                            <img src="/Gemini_Generated_Image_bmzwfebmzwfebmzw-removebg-previewn.png" alt="Logo" className="w-full h-full object-contain" />
+                        </div>
                         <motion.div
                             animate={{ opacity: currentFace === 4 ? 1 : 0.4 }}
                             className="flex flex-col items-center justify-center w-full h-full p-6 text-center"
@@ -131,6 +146,9 @@ export default function Hero() {
                         </motion.div>
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-br from-[#D81B8C] via-[#612D91] to-[#21094E] border border-white/20 face-bottom backdrop-blur-sm overflow-hidden group">
+                        <div className="absolute top-2 left-2 w-12 h-12 z-20">
+                            <img src="/Gemini_Generated_Image_bmzwfebmzwfebmzw-removebg-previewn.png" alt="Logo" className="w-full h-full object-contain" />
+                        </div>
                         <motion.div
                             animate={{ opacity: currentFace === 5 ? 1 : 0.4 }}
                             className="flex flex-col items-center justify-center w-full h-full p-6 text-center"
