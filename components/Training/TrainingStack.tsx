@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { useRouter } from "next/navigation";
 
 interface TrainingProgram {
     icon: string;
@@ -26,6 +27,7 @@ export default function TrainingStack({ programs }: TrainingStackProps) {
 }
 
 function TrainingCard({ program, index, total }: { program: TrainingProgram; index: number; total: number }) {
+    const router = useRouter();
     const containerRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -70,11 +72,14 @@ function TrainingCard({ program, index, total }: { program: TrainingProgram; ind
                     <div className="flex items-center gap-4">
                         <div className="flex-1 h-[1px] bg-white/10" />
                         <motion.button
+                            onClick={() => {
+                                router.push('/trainings')
+                            }}
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className={`px-8 py-3 rounded-full bg-gradient-to-r ${program.color} text-white text-[10px] font-bold tracking-widest uppercase shadow-lg`}
+                            className={`px-8 py-3 rounded-full bg-gradient-to-r cursor-pointer ${program.color} text-white text-[10px] font-bold tracking-widest uppercase shadow-lg`}
                         >
-                            Enroll Now
+                            More Details
                         </motion.button>
                         <div className="flex-1 h-[1px] bg-white/10" />
                     </div>

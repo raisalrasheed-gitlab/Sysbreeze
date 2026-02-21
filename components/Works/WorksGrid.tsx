@@ -95,7 +95,8 @@ function ProjectCard({ project, index, onClick }: { project: Project, index: num
             />
 
             {/* Hover Content Overlay */}
-            <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6 md:p-10">
+            <div className={`absolute inset-0 bg-black/60 transition-all duration-500 flex flex-col justify-end p-6 md:p-10 ${'opacity-0 group-hover:opacity-100 md:opacity-0'
+                } lg:opacity-0 lg:group-hover:opacity-100`}>
                 <div className="transform transition-transform duration-500 translate-y-4 group-hover:translate-y-0 text-center">
                     <span className="text-pink-500 font-bold text-xs md:text-sm uppercase tracking-[0.3em] mb-2 block">
                         {project.category}
@@ -106,8 +107,26 @@ function ProjectCard({ project, index, onClick }: { project: Project, index: num
                 </div>
             </div>
 
-            {/* Project Index */}
-            <div className="absolute top-6 right-6 opacity-20 font-black text-white text-xl">
+            {/* Mobile Affordance: Persistent Title & Icon on Mobile */}
+            <div className="absolute inset-0 flex flex-col justify-end p-6 md:hidden pointer-events-none">
+                <div className="flex items-center justify-between w-full">
+                    <div className="bg-black/40 backdrop-blur-md px-4 py-2 rounded-xl border border-white/10">
+                        <h3 className="text-sm font-black text-white uppercase tracking-tighter">
+                            {project.title}
+                        </h3>
+                    </div>
+                    <motion.div
+                        animate={{ scale: [1, 1.1, 1] }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                        className="w-10 h-10 rounded-full bg-pink-500 flex items-center justify-center text-white shadow-lg"
+                    >
+                        <i className="fa-solid fa-plus text-sm"></i>
+                    </motion.div>
+                </div>
+            </div>
+
+            {/* Project Index (Desktop only for cleaner mobile) */}
+            <div className="absolute top-6 right-6 opacity-20 font-black text-white text-xl hidden md:block">
                 0{index + 1}
             </div>
         </motion.div>

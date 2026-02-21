@@ -5,39 +5,39 @@ import WorksGrid from "./WorksGrid";
 
 const projects = [
     {
-        title: "ALL FOR ONE",
+        title: "Eco-Modern Rebranding",
         category: "Branding",
-        image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?q=80&w=1200&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=1200&auto=format&fit=crop",
         link: "#"
     },
     {
-        title: "Visual Identity",
-        category: "Design",
-        image: "https://images.unsplash.com/photo-1614850523296-d8c1af93d400?q=80&w=1200&auto=format&fit=crop",
-        link: "#"
-    },
-    {
-        title: "Design Projects",
-        category: "UX/UI",
-        image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=1200&auto=format&fit=crop",
-        link: "#"
-    },
-    {
-        title: "The MOVE",
-        category: "Photography",
-        image: "https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=1200&auto=format&fit=crop",
-        link: "#"
-    },
-    {
-        title: "Digital Studio",
-        category: "Web Dev",
+        title: "Global Growth Analytics",
+        category: "Digital Marketing",
         image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
         link: "#"
     },
     {
-        title: "Creative Portrait",
-        category: "Art",
-        image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1200&auto=format&fit=crop",
+        title: "Dynamic Workforce Portal",
+        category: "HR Management",
+        image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1200&auto=format&fit=crop",
+        link: "#"
+    },
+    {
+        title: "Next-Gen Fintech Platform",
+        category: "Website Design",
+        image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1200&auto=format&fit=crop",
+        link: "#"
+    },
+    {
+        title: "Luxury Shopping Interface",
+        category: "eCommerce",
+        image: "https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=1200&auto=format&fit=crop",
+        link: "#"
+    },
+    {
+        title: "Smart Healthcare Solution",
+        category: "Mobile Application",
+        image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1200&auto=format&fit=crop",
         link: "#"
     }
 ];
