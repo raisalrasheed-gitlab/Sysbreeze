@@ -1,11 +1,10 @@
 import { Metadata } from 'next';
 import Hero from "@/components/Ui/Hero/hero";
 import ServicesSection from "@/components/Services/ServicesSection";
+import WorksSection from "@/components/Works/WorksSection";
 import TrainingSection from "@/components/Training/TrainingSection";
 import AboutUs from "@/components/Ui/AboutUs/AboutUs";
 import Testimonials from "@/components/Ui/Testimonials/Testimonials";
-// import WorksSection from "@/components/Works/WorksSection";
-import { ScrollVelocity } from "@/components/ScrollVelocity/ScrollVelocity";
 
 export const metadata: Metadata = {
   title: "Sysbreeze | Business Consulting, IT Services & Training",
@@ -19,6 +18,7 @@ export default function Home() {
       <Hero />
       <AboutUs />
       <ServicesSection />
+      <WorksSection />
       <TrainingSection />
       <Testimonials />
     </main>

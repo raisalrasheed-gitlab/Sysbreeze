@@ -57,7 +57,7 @@ const trainingPrograms = [
 
 export default function TrainingSection() {
     return (
-        <section className=" md:py-12 relative z-20 bg-zinc-950 text-white" id="training">
+        <section className="pt-12 md:py-12 relative z-20 bg-zinc-950 text-white" id="training">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-4">
                     <motion.span
@@ -97,7 +97,7 @@ export default function TrainingSection() {
                             className="flex flex-col items-center gap-3 p-4 rounded-2xl bg-white/3 border border-white/5"
                         >
                             <i className={`fa-solid ${item.icon} text-cyan-400 text-xl`}></i>
-                            <span className="text-[10px] uppercase tracking-widest font-bold text-zinc-500">{item.text}</span>
+                            <span className="text-[10px] uppercase tracking-widest font-bold text-center text-zinc-500">{item.text}</span>
                         </motion.div>
                     ))}
                 </div>

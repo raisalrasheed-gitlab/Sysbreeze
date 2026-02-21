@@ -46,7 +46,7 @@ export default function WorksSection() {
     return (
         <section className="bg-black overflow-hidden" id="works">
             {/* Header with container constraints */}
-            <div className="container mx-auto px-6 py-8 md:py-16 text-center">
+            <div className="container mx-auto px-[5vw] py-8 md:py-16 text-center">
                 <motion.span
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
