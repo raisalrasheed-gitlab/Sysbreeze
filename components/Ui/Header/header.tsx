@@ -29,21 +29,30 @@ export default function Header() {
     return (
         <header
             className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled
-                ? "py-2 bg-white backdrop-blur-md shadow-sm border-b border-gray-50"
+                ? "py-3 bg-white backdrop-blur-md shadow-sm border-b border-gray-50"
                 : "py-3 bg-white"
                 }`}
         >
             <div className="container mx-auto px-6 flex items-center justify-between relative">
-                <Link href="/" className="relative flex items-center">
+                {isScrolled ? <Link href="/" className="relative flex items-center">
                     <Image
                         src="/Gemini_Generated_Image_gglehgglehgglehgn.png"
+                        alt="Sysbreeze Logo"
+                        width={130}
+                        height={90}
+                        className="object-contain"
+                        style={{ width: "auto", height: "auto" }}
+                    />
+                </Link> : <Link href="/" className="relative flex items-center">
+                    <Image
+                        src="/Gemini_Generated_Image_2w2muj2w2muj2w2m.png"
                         alt="Sysbreeze Logo"
                         width={120}
                         height={90}
                         className="object-contain"
                         style={{ width: "auto", height: "auto" }}
                     />
-                </Link>
+                </Link>}
 
                 {/* Desktop Navigation */}
                 <nav className="hidden lg:flex items-center space-x-8">
@@ -88,7 +97,7 @@ export default function Header() {
                                     x: 0,
                                     y: 0
                                 }}
-                                className="w-4 h-4 rounded-sm bg-gradient-to-br from-[#D81B8C] via-[#612D91] to-[#21094E] transition-colors group-hover:brightness-125"
+                                className="w-3 h-3 rounded-sm bg-gradient-to-br from-[#D81B8C] via-[#612D91] to-[#21094E] transition-colors group-hover:brightness-125"
                             />
                         ))}
                     </div>
