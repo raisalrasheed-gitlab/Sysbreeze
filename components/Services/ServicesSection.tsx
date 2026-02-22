@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import ScrollTriggeredCards from "../Ui/ScrollTriggeredCards/ScrollTriggeredCards";
+import { useRouter } from "next/navigation";
 
 const services = [
     {
@@ -49,10 +50,11 @@ const services = [
 ];
 
 export default function ServicesSection() {
+
     return (
         <section className="py-6 md:py-12 bg-black overflow-clip no-scrollbar" id="services">
             <div className="container mx-auto px-0 md:px-6">
-                <div className="text-center mb-6 px-6">
+                <div className="text-center mb-6 md:mb-12 lg:mb-20 px-6">
                     <motion.span
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
@@ -75,15 +77,22 @@ export default function ServicesSection() {
                 </div>
 
                 {/* Desktop: Grid Layout */}
-                <div className="hidden lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl mx-auto px-6">
+                <div className="hidden lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto px-6">
                     {services.map((service, index) => (
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.1 }}
-                            className="relative group h-[500px] rounded-[40px] overflow-hidden border border-white/10 shadow-2xl bg-gradient-to-br from-[#D81B8C] via-[#612D91] to-[#21094E]"
+                            whileHover={{
+                                y: -10,
+                                transition: { duration: 0.3, ease: "easeOut" }
+                            }}
+                            className="relative group h-[550px] rounded-[40px] overflow-hidden border border-white/10 shadow-2xl bg-gradient-to-br from-[#D81B8C] via-[#612D91] to-[#21094E] cursor-pointer"
                         >
+                            {/* Hover Overlay Glow */}
+                            <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
                             <ServiceCardContent service={service} index={index} isGrid />
                         </motion.div>
                     ))}
@@ -95,37 +104,53 @@ export default function ServicesSection() {
 
 function ServiceCardContent({ service, index = 0, isGrid = false }: { service: typeof services[0], index?: number, isGrid?: boolean }) {
     const displayIndex = (index + 1).toString().padStart(2, '0');
-
+    const router = useRouter();
     return (
         <>
             {/* Aesthetic Background Elements - Keeping it premium with subtle light blurs */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl" />
-            <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-2xl" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl group-hover:bg-white/10 transition-colors duration-500" />
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-2xl group-hover:bg-white/10 transition-colors duration-500" />
 
-            <div className={`relative z-10 flex flex-col items-center text-center pt-10 text-white h-full ${!isGrid ? 'md:flex-row md:text-left' : ''}`}>
-                {/* Number Indicator - Subtle white highlight */}
-                <div className={`absolute top-0 left-0 md:top-12 md:left-12 opacity-10 font-black text-6xl md:text-8xl tracking-tighter text-white ${isGrid ? 'hidden' : 'block'}`}>
+            <div className={`relative z-10 flex flex-col items-center text-center pt-12 pb-8 px-6 text-white h-full ${!isGrid ? 'md:flex-row md:text-left' : ''}`}>
+                {/* Number Indicator - Visible in full list, hidden in grid by default or repositioned */}
+                <div className={`absolute top-8 right-8 opacity-20 font-black text-4xl tracking-tighter text-white/50 ${!isGrid ? 'hidden' : 'block'}`}>
                     {displayIndex}
                 </div>
 
-                <div className={`flex-1 ${!isGrid ? 'md:pr-12' : 'mb-8'}`}>
-                    <h3 className={`${isGrid ? 'text-3xl lg:text-4xl px-4' : 'text-4xl md:text-5xl lg:text-7xl'} font-black mb-4 leading-none tracking-tighter uppercase text-white`}>
+                <div className={`flex-1 flex flex-col items-center h-full ${!isGrid ? 'md:pr-12' : ''}`}>
+                    {/* Icon - Prominent on desktop cards */}
+                    {isGrid && (
+                        <div className="mb-8 w-24 h-24 flex items-center justify-center rounded-3xl bg-white/10 border border-white/20 backdrop-blur-md group-hover:scale-110 transition-transform duration-500">
+                            <i className={`fa-solid ${service.icon} text-4xl text-white`}></i>
+                        </div>
+                    )}
+
+                    <h3 className={`${isGrid ? 'text-3xl lg:text-3xl px-4' : 'text-4xl md:text-5xl lg:text-7xl'} font-black mb-4 leading-none tracking-tighter uppercase text-white group-hover:text-pink-200 transition-colors`}>
                         {service.title}
                     </h3>
-                    <p className={`text-white/90 ${isGrid ? 'text-base px-6' : 'text-xl md:text-2xl'} font-medium max-w-xl mb-6 leading-tight`}>
+
+                    <p className={`text-white/90 ${isGrid ? 'text-base font-bold' : 'text-xl md:text-2xl font-medium'} max-w-xl mb-4 leading-tight uppercase tracking-wide`}>
                         {service.subtitle}
                     </p>
-                    <p className={`text-white/70 ${isGrid ? 'text-sm px-8 line-clamp-5' : 'text-sm md:text-lg'} max-w-md ${isGrid ? 'block' : 'hidden md:block'} mb-8`}>
-                        {service.description}{isGrid && <span className="text-white font-bold ml-1 italic">more..</span>}
+
+                    <p className={`text-white/70 ${isGrid ? 'text-[13px] line-clamp-4' : 'text-sm md:text-lg'} max-w-md ${isGrid ? 'block' : 'hidden md:block'} mb-auto`}>
+                        {service.description}
                     </p>
-                    <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="px-8 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-full text-white font-bold text-sm tracking-widest uppercase transition-colors backdrop-blur-sm group/btn flex items-center gap-2 mx-auto"
-                    >
-                        Explore More
-                        <i className="fa-solid fa-arrow-right-long transition-transform group-hover/btn:translate-x-1"></i>
-                    </motion.button>
+
+                    <div className="mt-8">
+                        <motion.button
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            onClick={() => {
+                                router.push(`/services
+                                `)
+                            }}
+                            className="px-8 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-full text-white font-bold text-xs tracking-widest uppercase transition-colors backdrop-blur-sm group/btn flex items-center gap-2"
+                        >
+                            Explore More
+                            <i className="fa-solid fa-arrow-right-long transition-transform group-hover/btn:translate-x-1"></i>
+                        </motion.button>
+                    </div>
                 </div>
             </div>
         </>

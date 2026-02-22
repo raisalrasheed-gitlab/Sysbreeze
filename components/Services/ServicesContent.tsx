@@ -105,7 +105,7 @@ export default function ServicesContent() {
                 </div>
 
                 {/* Services Cards */}
-                <div className="flex flex-col gap-12 max-w-4xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto">
                     {services.map((service, index) => (
                         <motion.div
                             key={index}
@@ -113,10 +113,14 @@ export default function ServicesContent() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-100px" }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
-                            className="group flex flex-col bg-[#0a0a0a] rounded-[3rem] overflow-hidden border border-white/5 hover:border-white/10 transition-colors shadow-2xl"
+                            whileHover={{ y: -10 }}
+                            className="group flex flex-col bg-[#0a0a0a] rounded-[3rem] overflow-hidden border border-white/5 hover:border-[#c1227d]/30 transition-all duration-500 shadow-2xl relative"
                         >
+                            {/* Hover Glow Effect */}
+                            <div className="absolute inset-0 bg-[#c1227d]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
                             {/* Card Image */}
-                            <div className="relative aspect-video overflow-hidden">
+                            <div className="relative aspect-[16/10] overflow-hidden">
                                 <Image
                                     src={service.image}
                                     alt={service.title}
@@ -124,10 +128,10 @@ export default function ServicesContent() {
                                     className="object-cover object-top transition-transform duration-1000 group-hover:scale-110"
                                     priority={index < 2}
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent opacity-90" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/20 to-transparent opacity-90" />
 
                                 {/* Overlay Content Header (Small) */}
-                                <div className="absolute top-8 left-8 right-8 flex justify-between items-start">
+                                <div className="absolute top-6 left-6 right-6 flex justify-between items-start">
                                     <span className="px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/10 text-[10px] font-black tracking-[0.2em] uppercase text-white">
                                         Service {index + 1}
                                     </span>
@@ -135,25 +139,27 @@ export default function ServicesContent() {
                             </div>
 
                             {/* Card Content */}
-                            <div className="p-10 md:p-14 pt-6">
+                            <div className="p-8 md:p-10 pt-4 flex-1 flex flex-col">
                                 <motion.h2
-                                    className="text-3xl md:text-5xl font-black tracking-tighter mb-6 leading-none"
+                                    className="text-2xl md:text-3xl lg:text-4xl font-black tracking-tighter mb-4 leading-none group-hover:text-[#c1227d] transition-colors"
                                 >
                                     {service.title}
                                 </motion.h2>
-                                <p className="text-xl text-white/80 font-bold mb-4">
+                                <p className="text-base text-white/80 font-bold mb-3 uppercase tracking-wide">
                                     {service.subtitle}
                                 </p>
-                                <p className="text-lg text-white/50 font-medium leading-relaxed mb-10">
+                                <p className="text-[14px] text-white/50 font-medium leading-relaxed mb-8 line-clamp-4">
                                     {service.description}
                                 </p>
-                                <motion.button
-                                    whileHover={{ x: 10 }}
-                                    className="flex items-center gap-3 text-white font-black tracking-widest uppercase text-xs group/btn border-b border-white/10 pb-2 w-fit"
-                                >
-                                    Explore Solution
-                                    <i className="fa-solid fa-arrow-right-long text-[#c1227d] transition-transform group-hover/btn:translate-x-2" />
-                                </motion.button>
+                                <div className="mt-auto">
+                                    <motion.button
+                                        whileHover={{ x: 10 }}
+                                        className="flex items-center gap-3 text-white font-black tracking-widest uppercase text-[10px] group/btn border-b border-white/10 pb-2 w-fit"
+                                    >
+                                        Explore Solution
+                                        <i className="fa-solid fa-arrow-right-long text-[#c1227d] transition-transform group-hover/btn:translate-x-2" />
+                                    </motion.button>
+                                </div>
                             </div>
                         </motion.div>
                     ))}

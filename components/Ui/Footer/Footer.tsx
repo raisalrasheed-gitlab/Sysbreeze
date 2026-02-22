@@ -54,7 +54,7 @@ export default function Footer() {
                         <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-[0.2em]">Sitemap</h4>
                         <ul className="space-y-4">
                             <li><Link href="/" className="text-white/50 hover:text-white text-sm transition-colors">Home</Link></li>
-                            <li><Link href="#services" className="text-white/50 hover:text-white text-sm transition-colors">Services</Link></li>
+                            <li><Link href="/services" className="text-white/50 hover:text-white text-sm transition-colors">Services</Link></li>
                             <li><Link href="/trainings" className="text-white/50 hover:text-white text-sm transition-colors">Trainings</Link></li>
                             <li><Link href="/careers" className="text-white/50 hover:text-white text-sm transition-colors">Careers</Link></li>
                         </ul>
@@ -64,9 +64,9 @@ export default function Footer() {
                     <div>
                         <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-[0.2em]">Contact</h4>
                         <ul className="space-y-4">
-                            <li className="text-white/50 text-sm italic">contact@sysbreeze.com</li>
-                            <li className="text-white/50 text-sm">+1 (123) 456-7890</li>
-                            <li className="text-white/50 text-sm">Dubai, UAE</li>
+                            <li className="text-white/50 text-sm ">info@sysbreeze.com</li>
+                            <li className="text-white/50 text-sm">+91 94466 21444</li>
+                            <li className="text-white/50 text-sm">Kinfra Hi-Tech Park, Calicut, Kerala, India</li>
                         </ul>
                     </div>
 
