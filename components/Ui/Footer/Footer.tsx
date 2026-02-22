@@ -3,37 +3,44 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
+    const pathname = usePathname();
+    const isContactPage = pathname === "/contact";
+
     return (
         <footer className="bg-black py-12 md:py-16 overflow-hidden">
             <div className="container mx-auto px-6">
                 {/* Large CTA Section */}
-                <div className="mb-12 md:mb-16">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="text-center"
-                    >
-                        <h2 className="text-5xl md:text-8xl font-black text-white tracking-tighter mb-8 bg-clip-text text-transparent bg-gradient-to-b from-white to-white/20">
-                            LET&apos;S WORK <br /> TOGETHER
-                        </h2>
-                        <Link href="/contact">
-                            <motion.div
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                className="inline-flex items-center gap-4 bg-white text-black px-5 py-3 rounded-full font-black text-lg uppercase tracking-tighter hover:bg-pink-500 cursor-pointer transition-colors"
-                            >
-                                CONTACT US
-                                <i className="fa-solid fa-arrow-right-long"></i>
-                            </motion.div>
-                        </Link>
-                    </motion.div>
-                </div>
+                {!isContactPage && (
+                    <div className="mb-12 md:mb-16">
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="text-center"
+                        >
+                            <h2 className="text-5xl md:text-8xl font-black text-white tracking-tighter mb-8 bg-clip-text text-transparent bg-gradient-to-b from-white to-white/20">
+                                LET&apos;S WORK <br /> TOGETHER
+                            </h2>
+                            <Link href="/contact">
+                                <motion.div
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    className="inline-flex items-center gap-4 bg-white text-black px-5 py-3 rounded-full font-black text-lg uppercase tracking-tighter hover:bg-pink-500 cursor-pointer transition-colors"
+                                >
+                                    CONTACT US
+                                    <i className="fa-solid fa-arrow-right-long"></i>
+                                </motion.div>
+                            </Link>
+                        </motion.div>
+                    </div>
+                )}
 
                 {/* Navigation Grid */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-10 border-t border-white/10 pt-10">
+                <div className={`grid grid-cols-2 m
+                d:grid-cols-4 gap-10 mb-10 ${!isContactPage ? 'border-t border-white/10  pt-10' : 'pt-0'}`}>
                     {/* Brand Info */}
                     <div className="col-span-2 md:col-span-1">
                         <Link href="/" className="mb-6 block h-20 w-80 relative">

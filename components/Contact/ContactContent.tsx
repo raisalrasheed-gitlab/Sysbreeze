@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function ContactContent() {
     return (
-        <main className="min-h-screen bg-[#050505] text-white pt-32 pb-20 relative overflow-hidden">
+        <main className="min-h-screen bg-[#050505] text-white pt-32 relative overflow-hidden">
             {/* Background Effects */}
             <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(34,211,238,0.1),transparent_50%)]" />
@@ -223,7 +223,7 @@ export default function ContactContent() {
                 </div>
 
                 {/* Office Location Section - Moved below */}
-                <div className="py-20 lg:py-32 border-t border-white/5 mt-20">
+                <div className="py-12 lg:py-16">
                     <div className="grid lg:grid-cols-2 gap-20 items-center max-w-7xl mx-auto">
                         <motion.div
                             initial={{ opacity: 0, scale: 0.95 }}
