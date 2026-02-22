@@ -2,12 +2,20 @@ import { Metadata } from 'next';
 import ServicesContent from '@/components/Services/ServicesContent';
 
 export const metadata: Metadata = {
-    title: 'Our Services | Professional IT & Business Solutions',
-    description: 'Explore the wide range of services offered by Sysbreeze, including Branding, Digital Marketing, HR Management, Website Design, Ecommerce Development, and Mobile Applications.',
+    title: "IT Services & Business Solutions | Sysbreeze Technologies",
+
+    description:
+        "Sysbreeze Technologies provides professional IT services, digital marketing, HR services, website development, ecommerce solutions and mobile app development for businesses.",
+
+    keywords:
+        "IT services, digital marketing, website development, HR services, branding services, ecommerce development",
+
     openGraph: {
-        title: 'Our Services | Sysbreeze',
-        description: 'Transform your business with our professional IT and consulting services.',
-    },
+        title: "Professional IT Services | Sysbreeze Technologies",
+
+        description:
+            "Grow your business with Sysbreeze Technologies IT and digital solutions."
+    }
 };
 
 export default function ServicesPage() {

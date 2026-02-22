@@ -7,10 +7,30 @@ import AboutUs from "@/components/Ui/AboutUs/AboutUs";
 import Testimonials from "@/components/Ui/Testimonials/Testimonials";
 
 export const metadata: Metadata = {
-  title: "Sysbreeze | Business Consulting, IT Services & Training",
-  description: "Sysbreeze is a future-focused business consulting, IT services, and training company dedicated to helping brands grow, businesses scale, and professionals build real-world skills.",
-};
 
+  title: "Sysbreeze Technologies | IT Services, Digital Marketing & Training Institute",
+
+  description:
+    "Sysbreeze Technologies provides business consulting, IT services, digital marketing, HR solutions, website development and professional training programs. Grow your business with expert solutions.",
+
+  keywords: [
+    "IT services",
+    "digital marketing services",
+    "website development",
+    "training institute",
+    "business consulting",
+    "HR services",
+    "mobile app development"
+  ],
+
+  openGraph: {
+    title: "Sysbreeze Technologies | IT Services & Training",
+
+    description:
+      "Professional IT services, digital marketing and training programs to grow your business and career."
+  }
+
+};
 
 export default function Home() {
   return (

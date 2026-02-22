@@ -6,55 +6,67 @@ import TrainingStack from "./TrainingStack";
 const trainingPrograms = [
     {
         icon: "fa-user-tie",
-        title: "HR TRAINING",
-        subtitle: "Online and offline training sessions available",
-        description: "Recruitment, payroll, compliance & HR operations with practical exposure.",
+        title: "HR Management Training Course",
+        subtitle: "Job-Oriented Online and Offline HR Training",
+        description:
+            "Learn recruitment, payroll management, HR operations, and labor law compliance through practical HR training with real-world experience.",
         color: "from-blue-600 to-indigo-600"
     },
+
     {
         icon: "fa-hashtag",
-        title: "DIGITAL MARKETING",
-        subtitle: "Online and offline training sessions available",
-        description: "SEO, Ads, Social Media, Analytics & Live Campaign Training.",
+        title: "Digital Marketing Training Course",
+        subtitle: "Professional Online and Offline Marketing Training",
+        description:
+            "Master SEO, Google Ads, social media marketing, analytics, and live campaign management with practical digital marketing training.",
         color: "from-orange-500 to-red-500"
     },
+
     {
         icon: "fa-code",
-        title: "PYTHON FULLSTACK",
-        subtitle: "Online and offline training sessions available",
-        description: "Python, Django, APIs, frontend & real-world projects.",
+        title: "Python Full Stack Development Course",
+        subtitle: "Online and Offline Programming Training",
+        description:
+            "Learn Python programming, Django framework, APIs, and frontend development by building real-world projects.",
         color: "from-yellow-500 to-green-500"
     },
+
     {
         icon: "fa-robot",
-        title: "AI & ROBOTICS",
-        subtitle: "Online and offline training sessions available",
-        description: "Hands-on training in AI concepts, robotics & automation.",
+        title: "Artificial Intelligence & Robotics Training",
+        subtitle: "Advanced Online and Offline AI Training",
+        description:
+            "Hands-on Artificial Intelligence and robotics training including automation, AI tools, and practical projects.",
         color: "from-cyan-500 to-blue-500"
     },
+
     {
         icon: "fa-layer-group",
-        title: "MERN STACK",
-        subtitle: "Online and offline training sessions available",
-        description: "MongoDB, Express, React & Node with real-time applications.",
+        title: "MERN Stack Development Course",
+        subtitle: "Full Stack Web Development Training",
+        description:
+            "Learn MongoDB, Express.js, React, and Node.js to build modern web applications with practical training.",
         color: "from-green-600 to-teal-600"
     },
+
     {
         icon: "fa-chart-line",
-        title: "DATA SCIENCE",
-        subtitle: "Online and offline training sessions available",
-        description: "Data analysis, visualization & real-world case studies.",
+        title: "Data Science Training Course",
+        subtitle: "Professional Data Analytics Training",
+        description:
+            "Learn data analysis, data visualization, and business analytics using real-world datasets and tools.",
         color: "from-purple-600 to-fuchsia-600"
     },
+
     {
         icon: "fa-brain",
-        title: "MACHINE LEARNING",
-        subtitle: "Online and offline training sessions available",
-        description: "Algorithms, models, and practical ML applications.",
+        title: "Machine Learning Training Course",
+        subtitle: "Advanced AI and ML Training",
+        description:
+            "Learn machine learning algorithms, predictive models, and real-world ML applications with practical training.",
         color: "from-pink-600 to-rose-600"
     }
 ];
-
 export default function TrainingSection() {
     return (
         <section className="pt-12 md:py-12 relative z-20 bg-zinc-950 text-white" id="training">

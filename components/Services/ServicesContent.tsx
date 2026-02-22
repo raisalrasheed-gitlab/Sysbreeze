@@ -2,46 +2,57 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-
 const services = [
+
     {
-        title: "BRANDING",
-        subtitle: "Turn Your Vision into a Powerful Brand Identity",
-        description: "We craft unique brand identities that resonate with your target audience and stand out in competitive markets. Our comprehensive approach includes logo design, color palette selection, typography, and brand messaging.",
+        title: "Professional Branding Services",
+        subtitle: "Create a Strong Business Brand Identity",
+        description:
+            "Expert branding services including logo design, brand identity creation, brand strategy, and business branding solutions. We help startups and businesses build a professional brand that attracts customers and increases trust.",
         image: "/images/branding.jpg"
     },
+
     {
-        title: "DIGITAL MARKETING",
-        subtitle: "Reach the Right Audience. Convert Better. Grow Faster.",
-        description: "Our data-driven marketing strategies are designed to maximize your ROI and accelerate business growth. We combine SEO, content marketing, social media management, and pay-per-click advertising.",
+        title: "Digital Marketing Services",
+        subtitle: "SEO, Social Media and Online Marketing Solutions",
+        description:
+            "Complete digital marketing services including SEO services, social media marketing, Google Ads management, Meta Ads campaigns, and content marketing to increase website traffic and generate business leads.",
         image: "/images/digitalmarketing.jpg"
     },
+
     {
-        title: "HR MANAGEMENT",
-        subtitle: "People. Process. Performance.",
-        description: "Optimize your workforce with our professional human resource management solutions tailored to your specific needs. We handle talent acquisition, employee onboarding, performance evaluations, and strategic workforce planning.",
+        title: "HR Management & Recruitment Services",
+        subtitle: "Complete Human Resource Solutions",
+        description:
+            "Professional HR management and recruitment services including hiring, employee onboarding, payroll support, performance management, and workforce planning for startups and growing businesses.",
         image: "/images/hr.jpg"
     },
+
     {
-        title: "WEBSITE DESIGN",
-        subtitle: "Websites That Look Great & Work Even Better",
-        description: "We build high-performance, responsive websites that combine aesthetic excellence with seamless user experience. We use the latest technologies like React and Next.js to provide a modern, future-proof digital platform.",
+        title: "Website Design & Development Services",
+        subtitle: "SEO-Friendly Business Websites",
+        description:
+            "Professional website design and development services for businesses. We create fast, mobile-friendly, and SEO-optimized websites that improve online visibility and attract customers.",
         image: "/images/webdevelop.jpg"
     },
+
     {
-        title: "ECOMMERCE DEVELOP",
-        subtitle: "Sell Online Without Limits",
-        description: "Launch and scale your online store with our robust ecommerce solutions designed for growth and reliability. We provide secure payment gateway integration, intuitive product management, and optimized checkout flows.",
+        title: "Ecommerce Website Development Services",
+        subtitle: "Online Store Development Solutions",
+        description:
+            "Ecommerce website development services with secure payment gateway integration, product management systems, and conversion-optimized checkout pages to increase online sales.",
         image: "/images/ecommerce.jpg"
     },
+
     {
-        title: "MOBILE APPLICATION",
-        subtitle: "Apps That Engage, Perform & Scale",
-        description: "Create powerful mobile experiences with our custom iOS and Android app development services for modern businesses. We design intuitive user interfaces that promote engagement and provide exceptional value.",
+        title: "Mobile App Development Services",
+        subtitle: "Android and iOS App Development",
+        description:
+            "Custom mobile app development services for Android and iOS platforms. We build scalable, secure, and user-friendly mobile applications for startups and businesses.",
         image: "/images/mobileapp.jpg"
     }
-];
 
+];
 export default function ServicesContent() {
     return (
         <main className="min-h-screen bg-black/2 text-white pt-32 pb-20 relative overflow-hidden">

@@ -6,52 +6,65 @@ import Image from "next/image";
 
 const trainingPrograms = [
     {
-        title: "HR TRAINING",
-        description: "Master the essentials of Human Resource Management, from talent acquisition and onboarding to payroll administration and labor law compliance. Our curriculum provides hands-on exposure to modern HR tools and real-world scenarios, ensuring you're ready for the dynamic corporate landscape. Available in both online and offline formats with guaranteed placement support.",
+        title: "HR Management Training Course",
+        description:
+            "Professional HR Management training course covering recruitment, employee onboarding, payroll management, and labor law compliance. This job-oriented certification program provides practical HR skills with placement assistance. Available in both online and offline training modes.",
         image: "/images/hr.jpg",
-        tags: ["Certification", "Placement Assistance", "Online & Offline"],
+        tags: ["HR Certification", "Placement Support", "Online & Offline"],
         href: "#"
     },
+
     {
-        title: "DIGITAL MARKETING",
-        description: "Transform your marketing career with our comprehensive Digital Marketing program. Dive deep into SEO, Google Ads, Social Media Marketing, Content Strategy, and Data Analytics. You'll work on live campaigns, learn to drive organic traffic, and optimize conversion rates under the guidance of industry experts. Flexible online and offline sessions available.",
+        title: "Digital Marketing Training Course",
+        description:
+            "Comprehensive Digital Marketing training including SEO, Google Ads, social media marketing, content marketing, and analytics. Learn practical skills through live projects and real campaigns. Ideal for students and professionals seeking a career in digital marketing.",
         image: "/images/digitalmarketing.jpg",
-        tags: ["Live Projects", "Online & Offline"],
+        tags: ["SEO Training", "Live Projects", "Online & Offline"],
         href: "#"
     },
+
     {
-        title: "PYTHON FULLSTACK",
-        description: "Become a versatile developer with our Python Fullstack course. Learn the intricacies of Python programming, Django and Flask frameworks, RESTful APIs, and frontend technologies like React. This program focuses on building scalable, real-world applications from scratch, preparing you for high-demand engineering roles. Choose from interactive online or hands-on offline batches.",
+        title: "Python Full Stack Development Course",
+        description:
+            "Job-oriented Python Full Stack Development course covering Python programming, Django, APIs, and frontend technologies. Learn to build real-world web applications and become a professional full stack developer. Available in online and offline classes.",
         image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2070&auto=format&fit=crop",
-        tags: ["Expert Trainers", "Fullstack", "Online & Offline"],
+        tags: ["Python", "Fullstack", "Online & Offline"],
         href: "#"
     },
+
     {
-        title: "AI & ROBOTICS",
-        description: "Step into the future with our AI & Robotics training. This program covers fundamental Artificial Intelligence concepts, machine vision, and hands-on robotics engineering. You'll gain practical experience with sensors, actuators, and AI integration in automated systems. We provide state-of-the-art laboratory access for offline students and advanced virtual simulation environments for online learners.",
+        title: "Artificial Intelligence & Robotics Training",
+        description:
+            "Advanced Artificial Intelligence and Robotics training program covering AI fundamentals, machine vision, automation, and robotics systems. Gain practical experience with modern AI tools and technologies through hands-on training.",
         image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2070&auto=format&fit=crop",
-        tags: ["Latest Tools", "Lab Access", "Online & Offline"],
+        tags: ["AI Training", "Robotics", "Online & Offline"],
         href: "#"
     },
+
     {
-        title: "MERN STACK",
-        description: "Dominate modern web development with the MERN Stack (MongoDB, Express, React, and Node.js). Our intensive course takes you from frontend design to backend architecture, focusing on real-time application building and efficient database management. This program is ideal for those looking to build fast, data-driven web solutions. Available through comprehensive online and offline training sessions.",
+        title: "MERN Stack Development Course",
+        description:
+            "Professional MERN Stack training course covering MongoDB, Express.js, React, and Node.js. Learn modern web development by building real-time applications. Ideal for students who want to become full stack web developers.",
         image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=2070&auto=format&fit=crop",
-        tags: ["React", "Placement Assistance", "Online & Offline"],
+        tags: ["MERN Stack", "React", "Online & Offline"],
         href: "#"
     },
+
     {
-        title: "DATA SCIENCE",
-        description: "Unlock the power of data with our Data Science certification. Learn to collect, analyze, and interpret complex data sets using Python, R, and advanced visualization tools. Our curriculum covers statistical modeling, predictive analytics, and real-world case studies across various industries. Whether you join our flexible online batches or attend offline workshops, you'll gain the skills to drive informed business decisions.",
+        title: "Data Science Certification Course",
+        description:
+            "Complete Data Science training program covering Python, data analysis, machine learning basics, and data visualization. Learn how to analyze business data and build predictive models with real-world datasets.",
         image: "/images/webdevelop.jpg",
-        tags: ["Analysis", "Big Data", "Online & Offline"],
+        tags: ["Data Science", "Analytics", "Online & Offline"],
         href: "#"
     },
+
     {
-        title: "MACHINE LEARNING",
-        description: "Delve into the world of intelligent algorithms with our Machine Learning program. We cover supervised and unsupervised learning, deep learning, and neural network architectures. You'll learn to build and deploy models that can learn from data and improve over time. Specialized training modules are available through both online and offline modes, tailored for aspiring AI engineers.",
+        title: "Machine Learning Training Course",
+        description:
+            "Professional Machine Learning training covering supervised learning, deep learning, and neural networks. Learn to build intelligent systems and predictive models using real-world datasets and practical projects.",
         image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop",
-        tags: ["Modeling", "Advanced", "Online & Offline"],
+        tags: ["Machine Learning", "AI", "Online & Offline"],
         href: "#"
     }
 ];

@@ -69,7 +69,7 @@ const SecondSection = () => {
                 >
                     <h3 className="text-white text-3xl md:text-6xl font-medium leading-[1.1] tracking-tight">
                         <span className="inline md:hidden">
-                            Sysbreeze Technologies Pvt. Ltd. is a future-focused business consulting, IT services, and HR services company helping organizations grow faster, scale smarter, and build high-performance teams. We deliver innovative digital solutions, workforce management, and AI-powered training programs
+                            Sysbreeze Technologies Pvt. Ltd. is a leading business consulting, IT services, and HR solutions company focused on helping organizations grow faster and scale efficiently.
                             {!isExpanded ? (
                                 <>
                                     {"... "}
@@ -85,7 +85,7 @@ const SecondSection = () => {
                             )}
                         </span>
                         <span className="hidden md:inline">
-                            Sysbreeze Technologies Pvt. Ltd. is a future-focused business consulting, IT services, and HR services company helping organizations grow faster, scale smarter, and build high-performance teams. We deliver innovative digital solutions, workforce management, and AI-powered training programs designed to develop real-world skills, improve productivity, and accelerate business transformation. Our integrated approach combines technology, talent, and strategy to drive sustainable growth for startups, enterprises, and professionals
+                            Sysbreeze Technologies Pvt. Ltd. is a leading business consulting, IT services, and HR solutions company focused on helping organizations grow faster and scale efficiently. We provide innovative digital solutions, workforce management services, and AI-powered training programs that enhance productivity and support business transformation.
                         </span>
                     </h3>
                 </motion.div>

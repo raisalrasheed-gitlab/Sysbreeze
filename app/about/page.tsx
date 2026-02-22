@@ -108,7 +108,7 @@ export default function AboutPage() {
                             <div className="w-14 h-14 bg-gradient-to-br from-[#D81B8C] to-[#612D91] rounded-2xl flex items-center justify-center mb-6">
                                 <Target className="text-white" />
                             </div>
-                            <h3 className="text-2xl md:text-3xl font-bold mb-4 uppercase tracking-tight italic">Our Mission</h3>
+                            <h3 className="text-2xl md:text-3xl font-bold mb-4 uppercase tracking-tight ">Our Mission</h3>
                             <p className="text-white/60 text-lg leading-relaxed">
                                 To deliver innovative digital solutions and workforce management that develop real-world skills, improve productivity, and accelerate business transformation.
                             </p>
