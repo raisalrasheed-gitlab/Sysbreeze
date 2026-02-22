@@ -9,7 +9,6 @@ export const metadata: Metadata = {
         description: 'Master new skills with our expert-led training programs in IT and management.',
     },
 };
-
 export default function TrainingsPage() {
     return <TrainingsContent />;
 }
